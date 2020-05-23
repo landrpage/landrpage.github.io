@@ -2182,3 +2182,21 @@ a:hover.back-to-top {
 	/* end of extra pages */
 }
 /* end of min-width width 1200px */
+
+.template-name:hover {
+	text-decoration: none;
+	color: #00bfd8;
+}
+
+.template-name {
+	text-decoration: none;
+}
+
+.template-cards:hover {
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+	border: none;
+}
+
+#templates-page-info {
+	font-size: 1.2em;
+}
