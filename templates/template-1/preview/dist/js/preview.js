@@ -99,7 +99,6 @@ function loadData() {
     var website_uuid = getUrlParameter("uuid");
 
     var url = "https://landerbackend.sunilkumarc682.now.sh/website/session/details?uuid=" + website_uuid;
-    // var url = "http://localhost:8000/website/session/details?uuid=" + website_uuid;
     $.ajax({
         type: 'GET',
         url: url,

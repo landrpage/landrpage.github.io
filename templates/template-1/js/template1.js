@@ -193,7 +193,7 @@ $("#live-preview").click(function() {
     
     if (website_session_uuid != "") {
         $("#spinnerLoaderOverlay").css("display", "none");
-        var preview_url = "https://landr.page/template-1/preview?uuid=" + website_session_uuid;
+        var preview_url = "https://landr.page/templates/template-1/preview?uuid=" + website_session_uuid;
         window.open(preview_url, '_blank');
         return
     }
@@ -215,7 +215,7 @@ $("#live-preview").click(function() {
             $("#spinnerLoaderOverlay").css("display", "none");
             website_session_uuid = response["website_details"]["uuid"];
             stripe_checkout_session_id = response["website_details"]["stripe_session_id"];
-            var preview_url = "https://landr.page/template-1/preview?uuid=" + website_session_uuid;
+            var preview_url = "https://landr.page/templates/template-1/preview?uuid=" + website_session_uuid;
             window.open(preview_url, '_blank');
         },
         error: function(err) {
@@ -245,7 +245,6 @@ $("#live-preview").click(function() {
                 $("#spinnerLoaderOverlay").css("display", "block");
                 var websiteName = $("#website-name").val();
                 var url = "https://landerbackend.sunilkumarc682.now.sh/website/details?website_name=" + websiteName;
-                // var url = "http://localhost:8000/website/details?website_name=" + websiteName;
 
                 $.ajax({
                     type: 'GET',
@@ -300,7 +299,6 @@ $("#payment-button").click(function() {
 
     if (!stripe_checkout_session_id) {
         var url = "https://landerbackend.sunilkumarc682.now.sh/website/session/details/"
-        // var url = "http://localhost:8000/website/session/details/";
         var websiteDetails = getWebsiteDetails();
         var body = JSON.stringify(websiteDetails);
         

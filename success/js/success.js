@@ -18,7 +18,7 @@ function getUrlParameter(sParam) {
 };
 
 function create_website() {
-    var url = "http://localhost:8000/website/details/";
+    var url = "https://landerbackend.sunilkumarc682.now.sh/website/details/";
     var website_uuid = getUrlParameter("website_uuid");
     var stripe_session_id = getUrlParameter("session_id");
 
