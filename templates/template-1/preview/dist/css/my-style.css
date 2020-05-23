@@ -1,0 +1,15 @@
+.no-display {
+    display: none;
+}
+
+#cover-image-svg {
+    display: none;
+}
+
+.social-link {
+    display: none;
+}
+
+#facebook-social-link, #twitter-social-link, #instagram-social-link, #google-social-link, #linkedin-social-link, #github-social-link {
+    display: none;
+}

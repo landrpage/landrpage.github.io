@@ -1,0 +1,500 @@
+* {
+  outline: none;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  font-family: "Lato", sans-serif;
+  /* font-family: 'Quicksand', sans-serif; */
+}
+
+body::-webkit-scrollbar {
+  width: 0.4em;
+}
+
+body::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+  border-radius: 10px;
+}
+
+ul,
+li {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: #212121;
+}
+
+.logo img {
+  max-width: 175px;
+}
+
+.container {
+  position: relative;
+}
+
+.container .container-wrap {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.container .container-wrap .left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container .container-wrap .left {
+  width: 30%;
+  height: 100vh;
+  background-color: #6a41ff;
+  background-image: linear-gradient(180deg,#6a41ff 10%,#224abe 100%);
+  position: relative;
+  overflow: hidden;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.container .container-wrap .left img {
+  position: absolute;
+  height: 80vh;
+  max-height: 746px;
+  left: 20%;
+}
+
+.container .container-wrap .left .play-button {
+  position: absolute;
+  left: 25%;
+  right: 0;
+  top: 45%;
+  margin: 0 auto;
+  width: 100px;
+}
+
+.container .container-wrap .right {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  width: 70%;
+  position: fixed;
+  right: 0;
+  top: 0;
+  min-height: 600px;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  /* background-color: #F6F8FA; */
+  /* background-color: #f3f7fd; */
+  background-color: #e0e5ee;
+}
+
+.container .container-wrap .right .content-wrap {
+  padding: 50px;
+}
+
+.container .container-wrap .right .content-wrap h1 {
+  font-weight: 300;
+  color: #212121;
+  font-size: 48px;
+  margin-bottom: 8px;
+}
+
+@media (max-width: 425px) {
+  .container .container-wrap .right .content-wrap h1 {
+      font-size: 40px;
+  }
+}
+
+.container .container-wrap .right .content-wrap h2 {
+  font-size: 28px;
+  font-weight: 500;
+  margin: 0 0 32px 0;
+}
+
+.container .container-wrap .right .content-wrap p {
+  line-height: 28px;
+  max-width: 80%;
+  margin-bottom: 2rem;
+}
+
+.container .container-wrap .right .content-wrap h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.container .container-wrap .right .content-wrap .cta {
+  margin-bottom: 2rem;
+}
+
+.container .container-wrap .right .content-wrap .cta a {
+  display: block;
+  width: 240px;
+}
+
+.container .container-wrap .right .content-wrap .cta a.add-to-chrome-btn {
+  width: auto;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #2962ff;
+  color: #FFF;
+  display: inline-block;
+  margin-bottom: 24px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.container .container-wrap .right .content-wrap .cta a img {
+  width: 100%;
+}
+
+.container .container-wrap .right .content-wrap .extra-links {
+  margin-top: 25px;
+}
+
+.container .container-wrap .right .content-wrap .extra-links a {
+  font-size: 14px;
+  margin-right: 10px;
+  font-weight: bold;
+  color: #666;
+}
+
+.container .container-wrap .right .content-wrap h5 {
+  margin-bottom: 0.5rem;
+}
+
+.container .container-wrap .right .content-wrap .share-links a {
+  font-size: 30px;
+  color: #757575;
+}
+
+@media (max-width: 425px) {
+  .container .container-wrap .right .content-wrap {
+      padding: 24px;
+  }
+}
+
+.container .container-wrap .right .footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  padding: 20px 10px;
+  background: #f9f9f9;
+  text-align: center;
+  font-size: 16px;
+}
+
+.container .container-wrap {
+  transition: 0.11s all linear;
+}
+
+.container.active .container-wrap {
+  transition: 0.11s all linear;
+  transform: scale(0.9);
+}
+
+#demo {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.7);
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  /* z-index: 999999; */
+  pointer-events: none;
+  transition: 0.11s all linear;
+}
+
+#demo .demo-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+}
+
+#demo .demo-wrap .close-button {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+#demo .demo-wrap .close-button img {
+  width: 30px;
+}
+
+#demo .demo-wrap>div {
+  width: 1020px;
+  height: 720px;
+  transform: scale(0.9);
+  margin: 0 !important;
+  transition: 0.11s all linear;
+}
+
+#demo.active {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+  pointer-events: inherit;
+}
+
+#demo.active .demo-wrap>div {
+  transition: 0.11s all linear;
+  transform: scale(1);
+}
+
+pre,
+code {
+  max-width: 600px;
+  background-color: #f6f8fa;
+  border-radius: 3px;
+  overflow: auto;
+  padding: 5px;
+  line-height: 28px;
+}
+
+pre {
+  overflow: auto;
+}
+
+a {
+  color: #6a41ff;
+}
+
+@media screen and (max-width: 1258px) {
+  .right {
+      position: relative !important;
+  }
+  code,
+  pre {
+      max-width: 450px;
+      width: 100% !important;
+  }
+  .left {
+      width: 20px !important;
+      display: none;
+  }
+  .left img {
+      display: none;
+  }
+  .right {
+      padding: 0 10px;
+      display: block !important;
+      flex-grow: 1 !important;
+      overflow-y: auto !important;
+  }
+  .play-button {
+      display: none;
+  }
+  footer {
+      padding-left: 50px;
+  }
+}
+
+footer {
+  font-size: 14px;
+  margin-bottom: 2rem;
+}
+
+
+/*# sourceMappingURL=index.css.map */
+
+.header-1 {
+  font-size: 1.8em;
+  font-weight: bold;
+  display: block;
+}
+
+.form-container {
+  margin-top: 1em;
+}
+
+.feature-section {
+  padding: 4px 0px 4px 0px;
+}
+
+.form-container label {
+  font-size: 0.9em;
+}
+
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  padding-top: 100px;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 80%;
+  /* Full width */
+  height: 80%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+}
+
+
+/* Modal Content */
+
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+
+/* The Close Button */
+
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .modal-xl {
+      width: 90%;
+      max-width: 1200px;
+      height: 90%;
+  }
+}
+
+.modal-backdrop {
+  background-color: green;
+}
+
+#carousel-prev-button {
+  display: none;
+}
+
+.verify-details-tables tbody tr th, .verify-details-tables tbody tr td {
+  font-size: 0.8em;
+  padding-left: 1em;
+}
+
+#carousel-tr-cn, #carousel-tr-pn, #carousel-tr-wn, #carousel-tr-pt, #carousel-tr-cil, #carousel-tr-tl, #carousel-tr-fl {
+  display: none;
+}
+
+.plan {
+    padding: 15px;
+    border-radius: 10px;
+    line-height: 1.8em;
+    margin: 10px;
+    font-size: 0.8em;
+    border: 1px solid #F6F8FA;
+    background-color: #F6F8FA;
+}
+
+.plan-selected {
+  background-color: #6a41ff;
+  color: #fff;
+}
+
+.btn-background {
+  background-color: #6a41ff;
+}
+
+.plan-header {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+.plan:hover {
+  cursor: pointer;
+  border: 1px solid #6a41ff;
+}
+
+.my-hr {
+  color: #fff;
+}
+
+.overlay {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */   
+    height: 100%;
+    width: 100%;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    background-color: rgb(0,0,0); /* Black fallback color */
+    background-color: rgba(0,0,0, 0.4); /* Black w/opacity */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+    display: none;
+}
+
+.my-loader {
+  position: relative;
+  top: 48%;
+  width: 100%;
+  text-align: center;
+}
+
+.my-card-header {
+  background-color: #f8f9fc; 
+  color: #4e73df!important;
+  font-weight: bold;
+}
+
+.header-text {
+  color: #4e73df!important;
+  font-weight: bold;
+}
+
+#instructions-container {
+  width: 90%;
+}
+
+#instructions-container ul li {
+  font-size: 0.8em;
+  padding-top: 0.5em;
+  list-style-type: square;
+}
+
+#helper-image-thumbnail:hover {
+  opacity: 0.8;
+  background-color: grey;
+  cursor: pointer;
+  transition: .5s ease;
+}
