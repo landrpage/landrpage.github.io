@@ -498,3 +498,12 @@ footer {
   cursor: pointer;
   transition: .5s ease;
 }
+
+#pricing-component-info {
+  display: none;
+  font-size: 0.8em;
+}
+
+.pricing-component-text {
+  font-size: 0.8em;
+}

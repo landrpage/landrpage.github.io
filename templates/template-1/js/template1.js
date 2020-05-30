@@ -1,6 +1,5 @@
 var PAYMENT_OPTION = 1;
 var WEBSITE_NAME = "";
-var HOST_URL = "http://sunilkumarc.in/"
 var MAIN_SECTIONS_LIMIT = 5;
 var FEATURE_SECTIONS_LIMIT = 12;
 var stripe_checkout_session_id = "";
@@ -28,10 +27,14 @@ function registerFeatureSectionDeletion() {
 
 registerFeatureSectionDeletion();
 
-function registerMainSectionDeletion() {
+function registerMainSectionEvents() {
     $(".delete-main-section").click(function(event) {
         var elem = event.target;
         $(elem).parent().parent().remove();
+    });
+
+    $(".section-image-url").keyup(function() {
+        cleanURLValue(this);
     });
 }
 
@@ -42,13 +45,13 @@ $("#add-main-section").click(function() {
         if (mainSections.length > 0) {
             mainSection += "<hr/>";
         }
-        mainSection += "<div class=\"form-group row\"><label for=\"section-name\" class=\"col-sm-3 col-form-label\">Section Header</label><div class=\"col-md-8 col-sm-8 mb-3\">  <input type=\"text\" class=\"form-control form-control-sm section-header\" placeholder=\"Section header\" required><div class=\"invalid-feedback\">Please provide a section name.</div></div></div><div class=\"form-group row mb-0\"><label for=\"section-description\" class=\"col-sm-3 col-form-label\">Section Description</label><div class=\"col-md-8 col-sm-8 mb-3\">  <textarea class=\"form-control form-control-sm section-description\" maxlength=\"200\" rows=\"6\" required></textarea><div class=\"invalid-feedback\">Please provide section description.</div></div></div><div class=\"d-flex justify-content-end\"><button type=\"button\" class=\"btn btn-sm btn-outline-danger delete-main-section\">Remove Section</button></div></div>";
+        mainSection += "<div class=\"form-group row\"><label for=\"section-name\" class=\"col-sm-3 col-form-label\">Section Header</label><div class=\"col-md-8 col-sm-8 mb-3\"><input type=\"text\" class=\"form-control form-control-sm section-header\" placeholder=\"Section header\" required><div class=\"invalid-feedback\">Please provide a section name.</div></div></div><div class=\"form-group row mb-0\"><label for=\"cover-image-link\" class=\"col-sm-3 col-form-label\">Section Image Link</label><div class=\"col-md-8 col-sm-8 mb-3\">  <div class=\"input-group mb-3 input-group-sm\"><div class=\"input-group-prepend\"><span class=\"input-group-text\" id=\"basic-addon3\">https://</span></div><input type=\"text\" class=\"form-control form-control-sm section-image-url\"><div class=\"invalid-feedback\">Please provide a link.</div></div></div></div><div class=\"form-group row mb-0\"><label for=\"section-description\" class=\"col-sm-3 col-form-label\">Section Description</label><div class=\"col-md-8 col-sm-8 mb-3\"><textarea class=\"form-control form-control-sm section-description\" maxlength=\"200\" rows=\"6\" required></textarea><div class=\"invalid-feedback\">Please provide section description.</div></div></div><div class=\"d-flex justify-content-end\"><button type=\"button\" class=\"btn btn-sm btn-outline-danger delete-main-section\">Remove Section</button></div></div>";
         $("#main-sections-container").append(mainSection);
     }
-    registerMainSectionDeletion();
+    registerMainSectionEvents();
 });
 
-registerMainSectionDeletion();
+registerMainSectionEvents();
 
 function deleteMainSection(event) {
     var elem = event;
@@ -61,7 +64,7 @@ function getWebsiteDetails() {
     var productTagline = $("#product-tagline").val();
 
     var websiteName = $("#website-name").val();
-    websiteName = websiteName.replace("https://landing.page/", "");
+    websiteName = websiteName.replace("https://landr.page/", "");
     
     var coverImageLink = $("#cover-image-link").val();
     coverImageLink = "https://" + coverImageLink.replace("https://", "");
@@ -113,10 +116,16 @@ function getWebsiteDetails() {
         var mainSection = {};
         var sectionName = $(mainSections[i]).find(".section-header").val();
         var sectionDescription = $(mainSections[i]).find(".section-description").val();
+        var imageURL = $(mainSections[i]).find(".section-image-url").val().trim();
         mainSection["header"] = sectionName;
         mainSection["description"] = sectionDescription;
+        if (imageURL) {
+            var sectionImageURL = "https://" + imageURL;
+            mainSection["image_url"] = sectionImageURL;
+        }
         mainSectionDetails.push(mainSection);
     }
+    var addPricingComponent = $("#add-pricing-component").prop("checked");
 
     websiteDetails = {
         "company_name": companyName,
@@ -132,6 +141,7 @@ function getWebsiteDetails() {
         "github_profile": githubProfile,
         "feature_sections": featureSectionDetails,
         "description_sections": mainSectionDetails,
+        "add_pricing_component": addPricingComponent,
         "template_id": 1
     }
     return websiteDetails
@@ -142,7 +152,7 @@ function loadVerifyDetailsPage() {
     var verifyDetailsPage = $("#verify-details-carousel");
     $(verifyDetailsPage).find("#company-name-verify").html(websiteDetails["company_name"]);
     $(verifyDetailsPage).find("#product-name-verify").html(websiteDetails["product_name"]);
-    $(verifyDetailsPage).find("#website-name-verify").html("https://landing.page/" + websiteDetails["website_name"]);
+    $(verifyDetailsPage).find("#website-name-verify").html("https://landr.page/" + websiteDetails["website_name"]);
     $(verifyDetailsPage).find("#product-description-verify").html(websiteDetails["product_description"]);
     $(verifyDetailsPage).find("#cover-image-link-verify").html(websiteDetails["product_image_url"]);
     $(verifyDetailsPage).find("#facebook-profile-verify").html(websiteDetails["facebook_profile"]);
@@ -151,6 +161,12 @@ function loadVerifyDetailsPage() {
     $(verifyDetailsPage).find("#google-profile-verify").html(websiteDetails["google_profile"]);
     $(verifyDetailsPage).find("#linkedin-profile-verify").html(websiteDetails["linkedin_profile"]);
     $(verifyDetailsPage).find("#github-profile-verify").html(websiteDetails["github_profile"]);
+    var checked = $("#add-pricing-component").prop("checked");
+    var pricingComponentVerify = "No";
+    if (checked) {
+        pricingComponentVerify = "Yes";
+    }
+    $(verifyDetailsPage).find("#pricing-component-verify").html(pricingComponentVerify);
 
     var featureSectionsVerify = $("#feature-sections-verify");
     var featureSectionHTML = "";
@@ -193,11 +209,11 @@ $("#live-preview").click(function() {
     
     if (website_session_uuid != "") {
         $("#spinnerLoaderOverlay").css("display", "none");
-        var preview_url = "https://landr.page/templates/template-1/preview?uuid=" + website_session_uuid;
+        var preview_url = LANDR_FRONTEND_HOST + "/templates/template-1/preview?uuid=" + website_session_uuid;
         window.open(preview_url, '_blank');
         return
     }
-    var url = "https://landerbackend.sunilkumarc682.now.sh/website/session/details/";
+    var url = LANDR_BACKEND_HOST + "/website/session/details/";
     var websiteDetails = getWebsiteDetails();
     var body = JSON.stringify(websiteDetails);
     
@@ -215,7 +231,7 @@ $("#live-preview").click(function() {
             $("#spinnerLoaderOverlay").css("display", "none");
             website_session_uuid = response["website_details"]["uuid"];
             stripe_checkout_session_id = response["website_details"]["stripe_session_id"];
-            var preview_url = "https://landr.page/templates/template-1/preview?uuid=" + website_session_uuid;
+            var preview_url = LANDR_FRONTEND_HOST + "/templates/template-1/preview?uuid=" + website_session_uuid;
             window.open(preview_url, '_blank');
         },
         error: function(err) {
@@ -244,7 +260,7 @@ $("#live-preview").click(function() {
 
                 $("#spinnerLoaderOverlay").css("display", "block");
                 var websiteName = $("#website-name").val();
-                var url = "https://landerbackend.sunilkumarc682.now.sh/website/details?website_name=" + websiteName;
+                var url = LANDR_BACKEND_HOST + "/website/details?website_name=" + websiteName;
 
                 $.ajax({
                     type: 'GET',
@@ -298,7 +314,7 @@ $("#payment-button").click(function() {
     $("#spinnerLoaderOverlay").css("display", "block");
 
     if (!stripe_checkout_session_id) {
-        var url = "https://landerbackend.sunilkumarc682.now.sh/website/session/details/"
+        var url = LANDR_BACKEND_HOST + "/website/session/details/"
         var websiteDetails = getWebsiteDetails();
         var body = JSON.stringify(websiteDetails);
         
@@ -363,6 +379,10 @@ $("#github-profile").keyup(function() {
     cleanURLValue(this);
 });
 
+$(".section-image-url").keyup(function() {
+    cleanURLValue(this);
+});
+
 $.fn.regexMask = function(mask) {
     $(this).keypress(function (event) {
         if (!event.charCode) return true;
@@ -374,3 +394,13 @@ $.fn.regexMask = function(mask) {
 };
 var mask = new RegExp('^[A-Za-z0-9-]*$')
 $('#website-name').regexMask(mask);
+
+
+$('#add-pricing-component').change(function() {
+    var checked = $(this).prop('checked');
+    if (checked) {
+        $("#pricing-component-info").css("display", "block");
+    } else {
+        $("#pricing-component-info").css("display", "none");
+    }
+})

@@ -18,7 +18,7 @@ function getUrlParameter(sParam) {
 };
 
 function create_website() {
-    var url = "https://landerbackend.sunilkumarc682.now.sh/website/details/";
+    var url = LANDR_BACKEND_HOST + "/website/details/";
     var website_uuid = getUrlParameter("website_uuid");
     var stripe_session_id = getUrlParameter("session_id");
 
@@ -30,7 +30,7 @@ function create_website() {
 
     $("#payment-success-page").css("display", "block");
     $("#payment-success-cover-image").attr("src", "images/success.jpg");
-
+    
     var website_details = {
         "website_uuid": website_uuid,
         "stripe_session_id": stripe_session_id
@@ -52,16 +52,23 @@ function create_website() {
             $("#spinnerLoaderOverlay").css("display", "none");
             if (response) {
                 $("#website-details-container").css("display", "block");
-                $("#website-creating-info").html("Your website is created successfully.");
+                $("#success-alert").css("display", "block");
+                $("#website-creating-info").css("display", "none");
                 $("#website-name").html(response["website_details"]["website_name"]);
                 $("#website-url").html(response["website_details"]["website_url"]);
+                $("#website-url").attr("href", response["website_details"]["website_url"]);
                 $("#website-id").html(response["website_details"]["website_uuid"]);
                 $("#payment-amount").html(response["website_details"]["payment_amount"] + " $");
             } else {
+                $("#website-creating-info").html(response["error"]);
+                $("#website-creating-info").css("color", "#dc3545");
                 $("#website-creation-failed-info").css("display", "block");
             }
         },
         error: function(err) {
+            $("#website-creating-info").css("display", "none");
+            $("#failure-alert").html("Something went wrong while creating your website.");
+            $("#failure-alert").css("display", "block");
             $("#spinnerLoaderOverlay").css("display", "none");
             $("#website-creation-failed-info").css("display", "block");
         }

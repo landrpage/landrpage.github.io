@@ -376,3 +376,11 @@ footer {
 #invalid-page {
     display: none;
 }
+
+#success-alert {
+	display: none;
+}
+
+#failure-alert {
+	display: none;
+}

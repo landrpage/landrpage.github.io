@@ -2200,3 +2200,11 @@ a:hover.back-to-top {
 #templates-page-info {
 	font-size: 1.2em;
 }
+
+.pricing-card {
+	margin-left: 0;
+}
+
+.pricing-card .card-body {
+	padding: 5px;
+}

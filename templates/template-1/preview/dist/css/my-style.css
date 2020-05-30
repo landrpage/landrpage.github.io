@@ -13,3 +13,45 @@
 #facebook-social-link, #twitter-social-link, #instagram-social-link, #google-social-link, #linkedin-social-link, #github-social-link {
     display: none;
 }
+
+.pricing-card {
+    float: left;
+    width: 30%;
+    height: 20em;
+    margin-left: 1.5em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.pricing-card:hover {
+    float: left;
+    width: 30%;
+    height: 20em;
+    margin-left: 1.5em;
+    border: none;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); 
+    cursor: pointer;
+}
+
+.price-text {
+    margin-top: 0.8em;
+}
+
+.price-text span {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.pricing-card ul {
+    padding-left: 0;
+    height: 8em;
+}
+
+.pricing-card li {
+    font-size: 0.8em;
+    list-style-type: none;
+}
+
+.pricing-section {
+    display: none;
+}

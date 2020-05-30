@@ -25,6 +25,22 @@ function validURL(str) {
     return !!pattern.test(str);
 }
 
+function getMainSection(details, index) {
+    if (index % 2 == 1) {
+        if (details["image_url"]) {
+            return "<section class=\"newsletter section\" style=\"height: 20em;\"><div style=\"margin-left: 10em; margin-right: 10em; margin-top: 5em;\"><div><div style=\"float: right;\"><img width=\"480\" height=\"360\" src=\"" + details['image_url'] + "\"/></div><div style=\"width: 50%\"><p style=\"font-weight: bold; font-size: 1.5em;\">" + details["header"] + "</p><p class=\"section-paragraph\" style=\"margin-top: 2em; padding-left: 0;\">"+ details["description"] +"</p></div></div></div></section><hr/>";
+        } else {
+            return "<section class=\"newsletter section\" style=\"height: 20em;\"><div style=\"margin-left: 10em; margin-right: 10em; margin-top: 5em;\"><div><div style=\"float: right;\"><svg width=\"480\" height=\"360\" viewBox=\"0 0 480 360\" xmlns=\"http://www.w3.org/2000/svg\"><defs><filter x=\"-500%\" y=\"-500%\" width=\"1000%\" height=\"1000%\" filterUnits=\"objectBoundingBox\" id=\"dropshadow-1\"><feOffset dy=\"16\" in=\"SourceAlpha\" result=\"shadowOffsetOuter\"></feOffset><feGaussianBlur stdDeviation=\"24\" in=\"shadowOffsetOuter\" result=\"shadowBlurOuter\"></feGaussianBlur><feColorMatrix values=\"0 0 0 0 0.12 0 0 0 0 0.17 0 0 0 0 0.21 0 0 0 0.2 0\" in=\"shadowBlurOuter\"></feColorMatrix></filter></defs><path fill=\"#F6F8FA\" d=\"M0 220V0h200zM480 140v220H280z\"></path><path fill=\"#FFF\" d=\"M40 50h400v260H40z\" style=\"mix-blend-mode:multiply;filter:url(#dropshadow-1)\"></path><path fill=\"#FFF\" d=\"M40 50h400v260H40z\"></path><path fill=\"#FFF\" d=\"M103 176h80v160h-80zM320 24h88v88h-88z\" style=\"mix-blend-mode:multiply;filter:url(#dropshadow-1)\"></path><path fill=\"#FFF\" d=\"M103 176h80v160h-80zM320 24h88v88h-88z\"></path><path fill=\"#FFF\" d=\"M230.97 198l16.971 16.971-16.97 16.97L214 214.972z\" style=\"mix-blend-mode:multiply;filter:url(#dropshadow-1)\"></path><path fill=\"#4992F0\" d=\"M230.97 198l16.971 16.971-16.97 16.97L214 214.972z\"></path><path fill=\"#FFF\" d=\"M203 121H103v100z\" style=\"mix-blend-mode:multiply;filter:url(#dropshadow-1)\"></path><path fill=\"#4992F0\" d=\"M203 121H103v100z\"></path><circle fill=\"#FFF\" cx=\"288\" cy=\"166\" r=\"32\" style=\"mix-blend-mode:multiply;filter:url(#dropshadow-1)\"></circle><circle fill=\"#0EB3CE\" cx=\"288\" cy=\"166\" r=\"32\" style=\"mix-blend-mode:multiply\"></circle></svg></div><div style=\"width: 50%\"><p style=\"font-weight: bold; font-size: 1.5em;\">"+ details["header"] +"</p><p class=\"section-paragraph\" style=\"margin-top: 2em; padding-left: 0;\">" + details["description"] + "</p></div></div></div></section><hr/>";
+        }
+    } else {
+        if (details["image_url"]) {
+            return "<section class=\"newsletter section\" style=\"height: 20em;\"><div style=\"margin-left: 10em; margin-right: 10em; margin-top: 5em;\"><div><div style=\"width: 50%; float: right; padding-left: 2em;\"><p style=\"font-weight: bold; font-size: 1.5em;\">"+ details["header"] +"</p><p class=\"section-paragraph\" style=\"margin-top: 2em; padding-left: 0;\">"+ details["description"] +"</p></div><div><img width=\"480\" height=\"360\" src=\"" + details['image_url'] + "\"></div></div></div></section><hr/>";
+        } else {
+            return "<section class=\"newsletter section\" style=\"height: 20em;\"><div style=\"margin-left: 10em; margin-right: 10em; margin-top: 5em;\"><div><div style=\"width: 50%; float: right; padding-left: 2em;\"><p style=\"font-weight: bold; font-size: 1.5em;\">" + details["header"] + "</p><p class=\"section-paragraph\" style=\"margin-top: 2em; padding-left: 0;\">" + details["description"] + "</p></div><div><svg width=\"480\" height=\"360\" viewBox=\"0 0 480 360\" xmlns=\"http://www.w3.org/2000/svg\"><defs><filter x=\"-500%\" y=\"-500%\" width=\"1000%\" height=\"1000%\" filterUnits=\"objectBoundingBox\" id=\"dropshadow-1\"><feOffset dy=\"16\" in=\"SourceAlpha\" result=\"shadowOffsetOuter\"></feOffset><feGaussianBlur stdDeviation=\"24\" in=\"shadowOffsetOuter\" result=\"shadowBlurOuter\"></feGaussianBlur><feColorMatrix values=\"0 0 0 0 0.12 0 0 0 0 0.17 0 0 0 0 0.21 0 0 0 0.2 0\" in=\"shadowBlurOuter\"></feColorMatrix></filter></defs><path fill=\"#F6F8FA\" d=\"M0 220V0h200zM480 140v220H280z\"></path><path fill=\"#FFF\" d=\"M40 50h400v260H40z\" style=\"mix-blend-mode:multiply;filter:url(#dropshadow-1)\"></path><path fill=\"#FFF\" d=\"M40 50h400v260H40z\"></path><path fill=\"#FFF\" d=\"M103 176h80v160h-80zM320 24h88v88h-88z\" style=\"mix-blend-mode:multiply;filter:url(#dropshadow-1)\"></path><path fill=\"#FFF\" d=\"M103 176h80v160h-80zM320 24h88v88h-88z\"></path><path fill=\"#FFF\" d=\"M230.97 198l16.971 16.971-16.97 16.97L214 214.972z\" style=\"mix-blend-mode:multiply;filter:url(#dropshadow-1)\"></path><path fill=\"#4992F0\" d=\"M230.97 198l16.971 16.971-16.97 16.97L214 214.972z\"></path><path fill=\"#FFF\" d=\"M203 121H103v100z\" style=\"mix-blend-mode:multiply;filter:url(#dropshadow-1)\"></path><path fill=\"#4992F0\" d=\"M203 121H103v100z\"></path><circle fill=\"#FFF\" cx=\"288\" cy=\"166\" r=\"32\" style=\"mix-blend-mode:multiply;filter:url(#dropshadow-1)\"></circle><circle fill=\"#0EB3CE\" cx=\"288\" cy=\"166\" r=\"32\" style=\"mix-blend-mode:multiply\"></circle></svg></div></div></div></section><hr/>";
+        }
+    }
+}
+
 function loadPreviewDetails(website_details) {
     $("#product-name").html(website_details["product_name"]);
     $("#product-description").html(website_details["product_description"]);
@@ -75,7 +91,7 @@ function loadPreviewDetails(website_details) {
     var main_sections = website_details["description_sections"];
     var main_sections_html = "";
     for (var i = 0; i < main_sections.length; ++i) {
-        main_sections_html += "<section class=\"features newsletter section\"><div class=\"container-sm\"><div class=\"newsletter-inner section-inner\" style=\"padding-bottom: 40px;\"><div class=\"newsletter-header is-revealing\" style=\"visibility: visible;\"><h2 class=\"section-title text-center mt-0\">"+main_sections[i]["header"]+"</h2><p class=\"section-paragraph\">"+main_sections[i]["description"]+"</p></div></div></div></section><hr/>";
+        main_sections_html += getMainSection(main_sections[i], i);
     }
     $("#main-sections").html(main_sections_html);
 
@@ -93,12 +109,17 @@ function loadPreviewDetails(website_details) {
     }
 
     $("#feature-sections").html(feature_sections_html);
+
+    var addPricingSection = website_details["add_pricing_component"];
+    if (addPricingSection) {
+        $(".pricing-section").css("display", "block");
+    }
 }
 
 function loadData() {
     var website_uuid = getUrlParameter("uuid");
 
-    var url = "https://landerbackend.sunilkumarc682.now.sh/website/session/details?uuid=" + website_uuid;
+    var url = LANDR_BACKEND_HOST + "/website/session/details?uuid=" + website_uuid;
     $.ajax({
         type: 'GET',
         url: url,
