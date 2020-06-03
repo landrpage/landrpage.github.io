@@ -8,11 +8,8 @@ var website_session_uuid = "";
 $("#add-feature-section").click(function() {
     var featureSections = $(".feature-section");
     if (featureSections.length < FEATURE_SECTIONS_LIMIT) {
-        var featureSection = "<div class=\"feature-section\">";
-        if (featureSections.length > 0) {
-            featureSection += "<hr/>";
-        }
-        featureSection += "<div class=\"form-group row\"><label for=\"feature-name\" class=\"col-sm-3 col-form-label\">Feature Name</label><div class=\"col-md-8 col-sm-8 mb-3\">  <input type=\"text\" class=\"form-control form-control-sm feature-name\" placeholder=\"Website name\" required><div class=\"invalid-feedback\">Please provide a feature name.</div></div></div><div class=\"form-group row mb-0\"><label for=\"product-tagline\" class=\"col-sm-3 col-form-label\">Feature Description</label><div class=\"col-md-8 col-sm-8 mb-3\">  <textarea class=\"form-control form-control-sm feature-description\" maxlength=\"200\" rows=\"3\" required></textarea><div class=\"invalid-feedback\">Please provide feature description.</div></div></div><div class=\"d-flex justify-content-end\"><button type=\"button\" class=\"btn btn-sm btn-outline-danger delete-feature-section\">Remove Feature</button></div></div>";
+        var featureSection = "<div class=\"feature-section pl-5 pt-3 pb-3 pr-3\" style=\"border-bottom: 5px solid #e0e5ee; padding-bottom: 0px\">";
+        featureSection += "<div class=\"form-group row mb-2\"><label for=\"feature-name\" class=\"col-sm-3 col-form-label\">Feature Name</label><div class=\"col-md-8 col-sm-8 mb-1 pt-2\" data-children-count=\"1\"><input type=\"text\" class=\"form-control form-control-sm feature-name\" placeholder=\"Website name\" required=\"\"><div class=\"invalid-feedback\">Please provide a feature name.</div></div></div><div class=\"form-group row mb-0\"><label for=\"product-tagline\" class=\"col-sm-3 col-form-label\">Feature Description</label><div class=\"col-md-8 col-sm-8 mb-3 pt-2\" data-children-count=\"1\"><textarea class=\"form-control form-control-sm feature-description\" maxlength=\"200\" rows=\"3\" required=\"\"></textarea><div class=\"invalid-feedback\">Please provide feature description.</div></div></div><div class=\"d-flex justify-content-end\"><button type=\"button\" class=\"btn btn-sm btn-outline-danger delete-feature-section\">Remove Feature</button></div></div>";
         $("#feature-sections-container").append(featureSection);
     }
     registerFeatureSectionDeletion();
@@ -41,11 +38,8 @@ function registerMainSectionEvents() {
 $("#add-main-section").click(function() {
     var mainSections = $(".main-section");
     if (mainSections.length < MAIN_SECTIONS_LIMIT) {
-        var mainSection = "<div class=\"main-section\">";
-        if (mainSections.length > 0) {
-            mainSection += "<hr/>";
-        }
-        mainSection += "<div class=\"form-group row\"><label for=\"section-name\" class=\"col-sm-3 col-form-label\">Section Header</label><div class=\"col-md-8 col-sm-8 mb-3\"><input type=\"text\" class=\"form-control form-control-sm section-header\" placeholder=\"Section header\" required><div class=\"invalid-feedback\">Please provide a section name.</div></div></div><div class=\"form-group row mb-0\"><label for=\"cover-image-link\" class=\"col-sm-3 col-form-label\">Section Image Link</label><div class=\"col-md-8 col-sm-8 mb-3\">  <div class=\"input-group mb-3 input-group-sm\"><div class=\"input-group-prepend\"><span class=\"input-group-text\" id=\"basic-addon3\">https://</span></div><input type=\"text\" class=\"form-control form-control-sm section-image-url\"><div class=\"invalid-feedback\">Please provide a link.</div></div></div></div><div class=\"form-group row mb-0\"><label for=\"section-description\" class=\"col-sm-3 col-form-label\">Section Description</label><div class=\"col-md-8 col-sm-8 mb-3\"><textarea class=\"form-control form-control-sm section-description\" maxlength=\"200\" rows=\"6\" required></textarea><div class=\"invalid-feedback\">Please provide section description.</div></div></div><div class=\"d-flex justify-content-end\"><button type=\"button\" class=\"btn btn-sm btn-outline-danger delete-main-section\">Remove Section</button></div></div>";
+        var mainSection = "<div class=\"main-section pl-5 pt-3 pb-3 pr-3\" style=\"border-bottom: 5px solid #e0e5ee; padding-bottom: 0px\">";
+        mainSection += "<div class=\"form-group row mb-0\"><label for=\"section-name\" class=\"col-sm-3 col-form-label\">Section Header</label><div class=\"col-md-8 col-sm-8 mb-2 pt-1 pb-1\" data-children-count=\"1\"><input type=\"text\" class=\"form-control form-control-sm section-header\" placeholder=\"Section header\" required=\"\"><div class=\"invalid-feedback\">Please provide a section name.</div></div></div><div class=\"form-group row mb-0\"><label for=\"cover-image-link\" class=\"col-sm-3 col-form-label\">Section Image Link</label><div class=\"col-md-8 col-sm-8 pt-2 pb-1\"><div class=\"input-group mb-3 input-group-sm\" data-children-count=\"1\"><div class=\"input-group-prepend\"><span class=\"input-group-text\" id=\"basic-addon3\" data-children-count=\"0\">https://</span></div><input type=\"text\" class=\"form-control form-control-sm section-image-url\"><div class=\"invalid-feedback\">Please provide a link.</div></div></div></div><div class=\"form-group row mb-0\"><label for=\"section-description\" class=\"col-sm-3 col-form-label pt-1\">Section Description</label><div class=\"col-md-8 col-sm-8 mb-3 pt-1\" data-children-count=\"1\"><textarea class=\"form-control form-control-sm section-description\" maxlength=\"500\" rows=\"6\" required=\"\"></textarea><div class=\"invalid-feedback\">Please provide section description.</div></div></div><div class=\"d-flex justify-content-end\"><button type=\"button\" class=\"btn btn-sm btn-outline-danger delete-main-section\">Remove Section</button></div></div>";
         $("#main-sections-container").append(mainSection);
     }
     registerMainSectionEvents();
@@ -284,7 +278,6 @@ $("#live-preview").click(function() {
                         }
                     },
                     error: function(err) {
-                        alert(err);
                         $("#website-name").next().html("A website with this name already exists");
                         $("#website-name").addClass("is-invalid");
                     }

@@ -13,8 +13,20 @@
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+
     </head>
     <body>
+        <div style="padding-top: 20px" class="modal fade" id="websiteBigImageModal" tabindex="-1" role="dialog" aria-labelledby="websiteBigImageModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-content" style="background-color: #F6F8FA;">
+                    <div class="modal-body">
+                        <img src="images/helper_image.png" style="width: 95%; height: 80%;"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="container">
             <div class="container-wrap">
                 <div class="left left-new" style="overflow: scroll;">
@@ -24,10 +36,10 @@
                         </div>
                     </div>
                     <div class="row" id="helper-image-thumbnail">
-                        <img data-toggle="modal" data-target="#websiteBigImageModal" src="https://s3-us-west-1.amazonaws.com/hyperpixel-assets/assets/bluesapling.com_landscape.jpg" style="left: 10%; width: 80%; height: 35%; top: 12%; border-radius: 5px;"/>
+                        <img data-toggle="modal" data-target="#websiteBigImageModal" src="/images/templates/template1.png" style="left: 10%; width: 80%; height: 35%; top: 12%; padding: 5px; border: 1px solid #fff;"/>
                     </div>
                     <div class="row">
-                        <div style="position: absolute; left: 10%; top: 50%; color: #fff;">
+                        <div style="position: absolute; left: 10%; top: 52%; color: #fff;">
                             <strong>Instructions:</strong>
                             <br/>
                             <div id="instructions-container">
@@ -59,7 +71,9 @@
                             </div>
                             <div class="carousel-inner">
                                <div class="carousel-item active" data-interval="false">
-                                <span class="header-1">Enter Landing Page Details</span>
+                                <span class="header-1">
+                                    Landing Page Details
+                                </span>
                                 <div class="form-container">
                                     <form class="needs-validation" novalidate>
                                         <div class="card mb-4">
@@ -209,9 +223,8 @@
                                                     <button type="button" class="btn btn-sm btn-outline-primary" id="add-feature-section">Add Feature</button>
                                                 </div>
                                             </div>
-                                            <div class="p-4 pl-5 ">
+                                            <div class="">
                                                 <div id="feature-sections-container">
-                                                    
                                                 </div>
                                             </div>
                                         </div>
@@ -224,7 +237,7 @@
                                                     <button type="button" class="btn btn-sm btn-outline-primary" id="add-main-section">Add Main Section</button>
                                                 </div>
                                             </div>
-                                            <div class="p-4 pl-5 ">
+                                            <div class="">
                                                 <div id="main-sections-container">
                                                     
                                                 </div>
@@ -350,7 +363,7 @@
                                     <div>
                                         <button class="btn btn-sm btn-primary col-md-2 mt-3" id="go-back-to-main-page">Back</button>
                                         <button class="btn btn-sm btn-primary col-md-2 mt-3" id="live-preview">Live Preview</button>
-                                        <button class="btn btn-sm btn-success col-md-2 mt-3" id="payment-button" style="float:right">Pay 49$</button>
+                                        <button class="btn btn-sm btn-success col-md-2 mt-3" id="payment-button" style="float:right">Checkout and Pay</button>
                                     </div>
                                 </div>
                             </div>

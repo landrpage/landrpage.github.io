@@ -46,7 +46,7 @@ function loadPreviewDetails(website_details) {
     $("#product-description").html(website_details["product_description"]);
     var product_image_url = website_details["product_image_url"];
 
-    if (product_image_url != "" && validURL(product_image_url)) {
+    if (product_image_url != "" && validURL(product_image_url)) {  
         $("#cover-image").attr('src', product_image_url);
         $("#cover-image-svg").css('display', 'none');
     } else {
