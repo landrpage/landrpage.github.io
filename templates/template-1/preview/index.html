@@ -2,301 +2,463 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Ava Template</title>
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,400i|Roboto:500" rel="stylesheet">
-    <link rel="stylesheet" href="dist/css/style.css">
-    <link rel="stylesheet" href="dist/css/my-style.css">
-    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://kit.fontawesome.com/be3c6e4bcf.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Tivo is a HTML landing page template built with Bootstrap to help you crate engaging presentations for SaaS apps and convert visitors into users.">
+    <meta name="author" content="Inovatik">
+
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
+	<meta property="og:site_name" content="" /> <!-- website name -->
+	<meta property="og:site" content="" /> <!-- website link -->
+	<meta property="og:title" content=""/> <!-- title shown in the actual shared post -->
+	<meta property="og:description" content="" /> <!-- description shown in the actual shared post -->
+	<meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
+	<meta property="og:url" content="" /> <!-- where do you want your post to link to -->
+	<meta property="og:type" content="article" />
+
+    <!-- Website Title -->
+    <title>SaaS App HTML Landing Page Template</title>
+    
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap&subset=latin-ext" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/fontawesome-all.css" rel="stylesheet">
+    <link href="css/swiper.css" rel="stylesheet">
+	<link href="css/magnific-popup.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/my-style.css">
+	
+	<!-- Favicon  -->
+    <link rel="icon" href="https://demos.onepagelove.com/html/tivo/images/favicon.png">
 </head>
-<body class="is-boxed has-animations">
-    <div class="body-wrap boxed-container">
-        <header class="site-header">
-            <div class="container">
-                <div class="site-header-inner">
-                    <div class="brand header-brand">
-                        <h1 class="m-0">
-                            <a href="#">
-                                <svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                                    <title>Ava</title>
-                                    <defs>
-                                        <linearGradient x1="100%" y1="0%" x2="0%" y2="100%" id="logo-gradient-b">
-                                            <stop stop-color="#39D8C8" offset="0%"/>
-                                            <stop stop-color="#BCE4F4" offset="47.211%"/>
-                                            <stop stop-color="#838DEA" offset="100%"/>
-                                        </linearGradient>
-                                        <path d="M32 16H16v16H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h28a2 2 0 0 1 2 2v14z" id="logo-gradient-a"/>
-                                        <linearGradient x1="23.065%" y1="25.446%" y2="100%" id="logo-gradient-c">
-                                            <stop stop-color="#1274ED" stop-opacity="0" offset="0%"/>
-                                            <stop stop-color="#1274ED" offset="100%"/>
-                                        </linearGradient>
-                                    </defs>
-                                    <g fill="none" fill-rule="evenodd">
-                                        <mask id="logo-gradient-d" fill="#fff">
-                                            <use xlink:href="#logo-gradient-a"/>
-                                        </mask>
-                                        <use fill="url(#logo-gradient-b)" xlink:href="#logo-gradient-a"/>
-                                        <path fill="url(#logo-gradient-c)" mask="url(#logo-gradient-d)" d="M-16-16h32v32h-32z"/>
-                                    </g>
-                                </svg>
-                            </a>
-                        </h1>
-                    </div>
-                </div>
+<body data-spy="scroll" data-target=".fixed-top">
+    
+    <!-- Preloader -->
+	<div class="spinner-wrapper">
+        <div class="spinner">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+        </div>
+    </div>
+    <!-- end of preloader -->
+    
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+        <div class="container">
+
+            <!-- Text Logo - Use this if you don't have a graphic logo -->
+            <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Tivo</a> -->
+
+            <!-- Image Logo -->
+            <a class="navbar-brand logo-image no-display" href="index.html" id="logo-image-url-container"><img id="logo-image-url" src=""></a>
+            
+            <!-- Mobile Menu Toggle Button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-awesome fas fa-bars"></span>
+                <span class="navbar-toggler-awesome fas fa-times"></span>
+            </button>
+            <!-- end of mobile menu toggle button -->
+
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="#header">HOME <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="#video">VIDEO</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="#features">FEATURES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="#details">DETAILS</a>
+                    </li>
+                    <li id="nav-pricing" class="nav-item no-display">
+                        <a class="nav-link page-scroll" href="#pricing">PRICING</a>
+                    </li>
+                </ul>
             </div>
-        </header>
+        </div> <!-- end of container -->
+    </nav> <!-- end of navbar -->
+    <!-- end of navigation -->
 
-        <main>
-            <section class="hero text-center">
-                <div class="container-sm">
-                    <div class="hero-inner">
-                        <h1 class="hero-title h2-mobile mt-0 is-revealing" id="product-name"></h1>
-                        <p class="hero-paragraph is-revealing" id="product-description"></p>
-                        <div class="hero-browser">
-                            <div class="bubble-3 is-revealing">
-                                <svg width="427" height="286" viewBox="0 0 427 286" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                    <defs>
-                                        <path d="M213.5 286C331.413 286 427 190.413 427 72.5S304.221 16.45 186.309 16.45C68.396 16.45 0-45.414 0 72.5S95.587 286 213.5 286z" id="bubble-3-a"/>
-                                    </defs>
-                                    <g fill="none" fill-rule="evenodd">
-                                        <mask id="bubble-3-b" fill="#fff">
-                                            <use xlink:href="#bubble-3-a"/>
-                                        </mask>
-                                        <use fill="#4E8FF8" xlink:href="#bubble-3-a"/>
-                                        <path d="M64.5 129.77c117.913 0 213.5-95.588 213.5-213.5 0-117.914-122.779-56.052-240.691-56.052C-80.604-139.782-149-201.644-149-83.73c0 117.913 95.587 213.5 213.5 213.5z" fill="#1274ED" mask="url(#bubble-3-b)"/>
-                                        <path d="M381.5 501.77c117.913 0 213.5-95.588 213.5-213.5 0-117.914-122.779-56.052-240.691-56.052C236.396 232.218 168 170.356 168 288.27c0 117.913 95.587 213.5 213.5 213.5z" fill="#75ABF3" mask="url(#bubble-3-b)"/>
-                                    </g>
-                                </svg>
-                            </div>
-                            <div class="bubble-4 is-revealing">
-                                <svg width="230" height="235" viewBox="0 0 230 235" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                    <defs>
-                                        <path d="M196.605 234.11C256.252 234.11 216 167.646 216 108 216 48.353 167.647 0 108 0S0 48.353 0 108s136.959 126.11 196.605 126.11z" id="bubble-4-a"/>
-                                    </defs>
-                                    <g fill="none" fill-rule="evenodd">
-                                        <mask id="bubble-4-b" fill="#fff">
-                                            <use xlink:href="#bubble-4-a"/>
-                                        </mask>
-                                        <use fill="#7CE8DD" xlink:href="#bubble-4-a"/>
-                                        <circle fill="#3BDDCC" mask="url(#bubble-4-b)" cx="30" cy="108" r="108"/>
-                                        <circle fill="#B1F1EA" opacity=".7" mask="url(#bubble-4-b)" cx="265" cy="88" r="108"/>
-                                    </g>
-                                </svg>
-                            </div>
-                            <div class="hero-browser-inner is-revealing">
-                                    <img style="width:800;height:450" id="cover-image"></img>
-                                    <svg width="800" height="450" viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="cover-image-svg">
-                                        <defs>
-                                            <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="browser-a">
-                                                <stop stop-color="#F6F8FA" stop-opacity=".48" offset="0%"/>
-                                                <stop stop-color="#F6F8FA" offset="100%"/>
-                                            </linearGradient>
-                                            <linearGradient x1="50%" y1="100%" x2="50%" y2="0%" id="browser-b">
-                                                <stop stop-color="#F6F8FA" stop-opacity=".48" offset="0%"/>
-                                                <stop stop-color="#F6F8FA" offset="100%"/>
-                                            </linearGradient>
-                                            <linearGradient x1="100%" y1="-12.816%" x2="0%" y2="-12.816%" id="browser-c">
-                                                <stop stop-color="#F6F8FA" stop-opacity="0" offset="0%"/>
-                                                <stop stop-color="#E3E7EB" offset="50.045%"/>
-                                                <stop stop-color="#F6F8FA" stop-opacity="0" offset="100%"/>
-                                            </linearGradient>
-                                            <filter x="-500%" y="-500%" width="1000%" height="1000%" filterUnits="objectBoundingBox" id="dropshadow-1">
-                                                <feOffset dy="16" in="SourceAlpha" result="shadowOffsetOuter"/>
-                                                <feGaussianBlur stdDeviation="24" in="shadowOffsetOuter" result="shadowBlurOuter"/>
-                                                <feColorMatrix values="0 0 0 0 0.12 0 0 0 0 0.17 0 0 0 0 0.21 0 0 0 0.2 0" in="shadowBlurOuter"/>
-                                            </filter>
-                                        </defs>
-                                        <g fill="none" fill-rule="evenodd">
-                                            <rect width="800" height="450" rx="4" fill="#FFF" style="mix-blend-mode:multiply;filter:url(#dropshadow-1)"/>
-                                            <rect width="800" height="450" rx="4" fill="#FFF"/>
-                                            <g fill="url(#browser-a)" transform="translate(47 67)">
-                                                <path d="M146 0h122v122H146zM0 0h122v122H0zM292 0h122v122H292zM438 0h122v122H438zM584 0h122v122H584z"/>
-                                            </g>
-                                            <g transform="translate(47 239)" fill="url(#browser-b)">
-                                                <path d="M146 0h122v122H146zM0 0h122v122H0zM292 0h122v122H292zM438 0h122v122H438zM584 0h122v122H584z"/>
-                                            </g>
-                                            <path fill="url(#browser-c)" d="M0 146h706v2H0z" transform="translate(47 67)"/>
-                                            <g transform="translate(0 12)">
-                                                <circle fill="#FF6D8B" cx="36" cy="4" r="4"/>
-                                                <circle fill="#FFCB4F" cx="52" cy="4" r="4"/>
-                                                <circle fill="#7CE8DD" cx="68" cy="4" r="4"/>
-                                                <path fill="url(#browser-c)" d="M0 20h800v2H0z"/>
-                                                <path fill="#E3E7EB" d="M742 2h24v4h-24z"/>
-                                            </g>
-                                            <g>
-                                                <path fill="#F6F8FA" d="M47 385h706v32H47z"/>
-                                                <path fill="#E3E7EB" d="M356 399h88v4h-88z"/>
-                                            </g>
-                                        </g>
-                                    </svg>
-                            </div>
-                            <div class="bubble-1 is-revealing">
-                                <svg width="61" height="52" viewBox="0 0 61 52" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                    <defs>
-                                        <path d="M32 43.992c17.673 0 28.05 17.673 28.05 0S49.674 0 32 0C14.327 0 0 14.327 0 32c0 17.673 14.327 11.992 32 11.992z" id="bubble-1-a"/>
-                                    </defs>
-                                    <g fill="none" fill-rule="evenodd">
-                                        <mask id="bubble-1-b" fill="#fff">
-                                            <use xlink:href="#bubble-1-a"/>
-                                        </mask>
-                                        <use fill="#FF6D8B" xlink:href="#bubble-1-a"/>
-                                        <path d="M2 43.992c17.673 0 28.05 17.673 28.05 0S19.674 0 2 0c-17.673 0-32 14.327-32 32 0 17.673 14.327 11.992 32 11.992z" fill="#FF4F73" mask="url(#bubble-1-b)"/>
-                                        <path d="M74 30.992c17.673 0 28.05 17.673 28.05 0S91.674-13 74-13C56.327-13 42 1.327 42 19c0 17.673 14.327 11.992 32 11.992z" fill-opacity=".8" fill="#FFA3B5" mask="url(#bubble-1-b)"/>
-                                    </g>
-                                </svg>
-                            </div>
-                            <div class="bubble-2 is-revealing">
-                                <svg width="179" height="126" viewBox="0 0 179 126" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                    <defs>
-                                        <path d="M104.697 125.661c41.034 0 74.298-33.264 74.298-74.298s-43.231-7.425-84.265-7.425S0-28.44 0 12.593c0 41.034 63.663 113.068 104.697 113.068z" id="bubble-2-a"/>
-                                    </defs>
-                                    <g fill="none" fill-rule="evenodd">
-                                        <mask id="bubble-2-b" fill="#fff">
-                                            <use xlink:href="#bubble-2-a"/>
-                                        </mask>
-                                        <use fill="#838DEA" xlink:href="#bubble-2-a"/>
-                                        <path d="M202.697 211.661c41.034 0 74.298-33.264 74.298-74.298s-43.231-7.425-84.265-7.425S98 57.56 98 98.593c0 41.034 63.663 113.068 104.697 113.068z" fill="#626CD5" mask="url(#bubble-2-b)"/>
-                                        <path d="M43.697 56.661c41.034 0 74.298-33.264 74.298-74.298s-43.231-7.425-84.265-7.425S-61-97.44-61-56.407C-61-15.373 2.663 56.661 43.697 56.661z" fill="#B1B6F1" opacity=".64" mask="url(#bubble-2-b)"/>
-                                    </g>
-                                </svg>
 
+    <!-- Header -->
+    <header id="header" class="header">
+        <div class="header-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-xl-5">
+                        <div class="text-container">
+                            <h1 id="product-name"></h1>
+                            <p class="p-large" id="product-description"></p>
+                        </div> <!-- end of text-container -->
+                    </div> <!-- end of col -->
+                    <div class="col-lg-6 col-xl-7">
+                        <div class="image-container">
+                            <div class="img-wrapper">
+                                <img class="img-fluid" src="https://demos.onepagelove.com/html/tivo/images/header-software-app.png" alt="alternative" id="product-image-url" height="100">
+                            </div> <!-- end of img-wrapper -->
+                        </div> <!-- end of image-container -->
+                    </div> <!-- end of col -->
+                </div> <!-- end of row -->
+            </div> <!-- end of container -->
+        </div> <!-- end of header-content -->
+    </header> <!-- end of header -->
+    <svg class="header-frame" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 1920 310"><defs><style>.cls-1{fill:#5f4def;}</style></defs><title>header-frame</title><path class="cls-1" d="M0,283.054c22.75,12.98,53.1,15.2,70.635,14.808,92.115-2.077,238.3-79.9,354.895-79.938,59.97-.019,106.17,18.059,141.58,34,47.778,21.511,47.778,21.511,90,38.938,28.418,11.731,85.344,26.169,152.992,17.971,68.127-8.255,115.933-34.963,166.492-67.393,37.467-24.032,148.6-112.008,171.753-127.963,27.951-19.26,87.771-81.155,180.71-89.341,72.016-6.343,105.479,12.388,157.434,35.467,69.73,30.976,168.93,92.28,256.514,89.405,100.992-3.315,140.276-41.7,177-64.9V0.24H0V283.054Z"/></svg>
+    <!-- end of header -->
+
+    <!-- Customers -->
+    <div class="slider-1" id="add-customers-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    
+                    <!-- Image Slider -->
+                    <div class="slider-container">
+                        <div class="swiper-container image-slider">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                        <img class="img-fluid" src="https://demos.onepagelove.com/html/tivo/images/customer-logo-1.png" alt="alternative">
+                                </div>
+                                <div class="swiper-slide">
+                                        <img class="img-fluid" src="https://demos.onepagelove.com/html/tivo/images/customer-logo-2.png" alt="alternative">
+                                </div>
+                                <div class="swiper-slide">
+                                        <img class="img-fluid" src="https://demos.onepagelove.com/html/tivo/images/customer-logo-3.png" alt="alternative">
+                                </div>
+                                <div class="swiper-slide">
+                                        <img class="img-fluid" src="https://demos.onepagelove.com/html/tivo/images/customer-logo-4.png" alt="alternative">
+                                </div>
+                                <div class="swiper-slide">
+                                        <img class="img-fluid" src="https://demos.onepagelove.com/html/tivo/images/customer-logo-5.png" alt="alternative">
+                                </div>
+                                <div class="swiper-slide">
+                                        <img class="img-fluid" src="https://demos.onepagelove.com/html/tivo/images/customer-logo-6.png" alt="alternative">
+                                </div>
+                            </div> <!-- end of swiper-wrapper -->
+                        </div> <!-- end of swiper container -->
+                    </div> <!-- end of slider-container -->
+                    <!-- end of image slider -->
+
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of slider-1 -->
+    <!-- end of customers -->
+
+    <!-- Video -->
+    <div id="video" class="basic-2 no-display">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- Video Preview -->
+                    <div class="image-container">
+                        <div class="video-wrapper">
+                            <a class="popup-youtube" href="" data-effect="fadeIn" id="video-details-url">
+                                <img class="img-fluid" src="https://demos.onepagelove.com/html/tivo/images/video-image.png" alt="alternative">
+                                <span class="video-play-button">
+                                    <span></span>
+                                </span>
+                            </a>
+                        </div> <!-- end of video-wrapper -->
+                    </div> <!-- end of image-container -->
+                    <!-- end of video preview -->
+                    <div class="p-heading" id="video-details-description"></div>        
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-2 -->
+    <!-- end of video -->
+
+    <!-- Description -->
+    <div id="features" class="cards-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="h2-heading">Services We Provide</h2>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div id="feature-sections">
+                    </div>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of cards-1 -->
+    <!-- end of description -->
+    
+    <div id="main-sections">
+    </div>
+
+    <!-- Pricing -->
+    <div id="pricing" class="cards-2 no-display">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="above-heading">PRICING</div>
+                    <h2 class="h2-heading">Pricing Options Table</h2>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- Card-->
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="card-title">BASIC</div>
+                            <div class="price"><span class="currency">$</span><span class="value">Free</span></div>
+                            <div class="frequency">14 days trial</div>
+                            <div class="divider"></div>
+                            <ul class="list-unstyled li-space-lg">
+                                <li class="media">
+                                    <i class="fas fa-check"></i><div class="media-body">Email Marketing Module</div>
+                                </li>
+                                <li class="media">
+                                    <i class="fas fa-check"></i><div class="media-body">User Control Management</div>
+                                </li>
+                                <li class="media">
+                                    <i class="fas fa-times"></i><div class="media-body">List Building And Cleaning</div>
+                                </li>
+                                <li class="media">
+                                    <i class="fas fa-times"></i><div class="media-body">Collected Data Reports</div>
+                                </li>
+                                <li class="media">
+                                    <i class="fas fa-times"></i><div class="media-body">Planning And Evaluation</div>
+                                </li>
+                            </ul>
+                            <div class="button-wrapper">
+                                <a class="btn-solid-reg page-scroll" href="sign-up.html">SIGN UP</a>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </section>
+                    </div> <!-- end of card -->
+                    <!-- end of card -->
 
-            <section class="features section text-center">
-                <div class="container">
-                    <div class="features-inner section-inner has-bottom-divider" id="feature-sections">
-                        
-                    </div>
-                </div>
-            </section>
-            
-            <div id="main-sections"></div>
+                    <!-- Card-->
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="card-title">ADVANCED</div>
+                            <div class="price"><span class="currency">$</span><span class="value">29.99</span></div>
+                            <div class="frequency">monthly</div>
+                            <div class="divider"></div>
+                            <ul class="list-unstyled li-space-lg">
+                                <li class="media">
+                                    <i class="fas fa-check"></i><div class="media-body">Email Marketing Module</div>
+                                </li>
+                                <li class="media">
+                                    <i class="fas fa-check"></i><div class="media-body">User Control Management</div>
+                                </li>
+                                <li class="media">
+                                    <i class="fas fa-check"></i><div class="media-body">List Building And Cleaning</div>
+                                </li>
+                                <li class="media">
+                                    <i class="fas fa-times"></i><div class="media-body">Collected Data Reports</div>
+                                </li>
+                                <li class="media">
+                                    <i class="fas fa-times"></i><div class="media-body">Planning And Evaluation</div>
+                                </li>
+                            </ul>
+                            <div class="button-wrapper">
+                                <a class="btn-solid-reg page-scroll" href="sign-up.html">SIGN UP</a>
+                            </div>
+                        </div>
+                    </div> <!-- end of card -->
+                    <!-- end of card -->
 
-            <section class="newsletter section pricing-section" style="height: 30em;">
-                <div class="container">
-                    <div style="text-align: center; font-size: 1.5em; font-weight: bold; margin-top: 2em;">Pricing</div>
-                    <div style="width: 100%; text-align: center; margin-top: 3em;">
-                        <span class="pricing-card">
-                            <div style="width: 90%; margin-left: 5%;">
-                                <div style="font-weight: bold; font-size: 1em; margin-top: 0.5em; color: #000">Basic</div>
-                                <div class="price-text">$ <span>27</span> /mo</div>
-                                <hr/>
-                                <ul>
-                                    <li>Lorem ipsum is common text</li>
-                                    <li>Lorem ipsum is common text</li>
-                                    <li>Lorem ipsum is common text</li>
-                                </ul>
-                                <a class="button button-primary button-block button-shadow" href="#">Get early access</a>
+                    <!-- Card-->
+                    <div class="card">
+                        <!--<div class="label">
+                            <p class="best-value">Best Value</p>
+                        </div> -->
+                        <div class="card-body">
+                            <div class="card-title">COMPLETE</div>
+                            <div class="price"><span class="currency">$</span><span class="value">39.99</span></div>
+                            <div class="frequency">monthly</div>
+                            <div class="divider"></div>
+                            <ul class="list-unstyled li-space-lg">
+                                <li class="media">
+                                    <i class="fas fa-check"></i><div class="media-body">Email Marketing Module</div>
+                                </li>
+                                <li class="media">
+                                    <i class="fas fa-check"></i><div class="media-body">User Control Management</div>
+                                </li>
+                                <li class="media">
+                                    <i class="fas fa-check"></i><div class="media-body">List Building And Cleaning</div>
+                                </li>
+                                <li class="media">
+                                    <i class="fas fa-check"></i><div class="media-body">Collected Data Reports</div>
+                                </li>
+                                <li class="media">
+                                    <i class="fas fa-check"></i><div class="media-body">Planning And Evaluation</div>
+                                </li>
+                            </ul>
+                            <div class="button-wrapper">
+                                <a class="btn-solid-reg page-scroll" href="sign-up.html">SIGN UP</a>
                             </div>
-                        </span>
-                        <span class="pricing-card">
-                            <div style="width: 90%; margin-left: 5%;">
-                                <div style="font-weight: bold; font-size: 1em; margin-top: 0.5em; color: #000">Standard</div>
-                                <div class="price-text">$ <span>47</span> /mo</div>
-                                <hr/>
-                                <ul>
-                                    <li>Lorem ipsum is common text</li>
-                                    <li>Lorem ipsum is common text</li>
-                                    <li>Lorem ipsum is common text</li>
-                                    <li>Lorem ipsum is common text</li>
-                                </ul>
-                                <a class="button button-primary button-block button-shadow" href="#">Get early access</a>
-                            </div>
-                        </span>
-                        <span class="pricing-card">
-                            <div style="width: 90%; margin-left: 5%;">
-                                <div style="font-weight: bold; font-size: 1em; margin-top: 0.5em; color: #000">Premium</div>
-                                <div class="price-text">$ <span>87</span> /mo</div>
-                                <hr/>
-                                <ul>
-                                    <li>Lorem ipsum is common text</li>
-                                    <li>Lorem ipsum is common text</li>
-                                    <li>Lorem ipsum is common text</li>
-                                    <li>Lorem ipsum is common text</li>
-                                    <li>Lorem ipsum is common text</li>
-                                </ul>
-                                <a class="button button-primary button-block button-shadow" href="#">Get early access</a>
-                            </div>
-                        </span>
-                    </div>
-                </div>
-            </section>
-        </main>
+                        </div>
+                    </div> <!-- end of card -->
+                    <!-- end of card -->
 
-        <footer class="site-footer text-light">
-            <div class="container">
-                <div class="site-footer-inner">
-                    <div class="brand footer-brand">
-                        <a href="#">
-                            <svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                                <title>Ava</title>
-                                <defs>
-                                    <path d="M32 16H16v16H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h28a2 2 0 0 1 2 2v14z" id="logo-gradient-footer-a"/>
-                                    <linearGradient x1="50%" y1="50%" y2="100%" id="logo-gradient-footer-b">
-                                        <stop stop-color="#FFF" stop-opacity="0" offset="0%"/>
-                                        <stop stop-color="#FFF" offset="100%"/>
-                                    </linearGradient>
-                                </defs>
-                                <g fill="none" fill-rule="evenodd">
-                                    <mask id="logo-gradient-footer-c" fill="#fff">
-                                        <use xlink:href="#logo-gradient-footer-a"/>
-                                    </mask>
-                                    <use fill-opacity=".32" fill="#FFF" xlink:href="#logo-gradient-footer-a"/>
-                                    <path fill="url(#logo-gradient-footer-b)" mask="url(#logo-gradient-footer-c)" d="M-16-16h32v32h-32z"/>
-                                </g>
-                            </svg>
-                        </a>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of cards-2 -->
+    <!-- end of pricing -->
+
+    <!-- Testimonials -->
+    <div class="slider-2 basic-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    
+                    <div class="slider-container">
+                        <div class="swiper-container text-slider">
+                            <div class="swiper-wrapper" id="testimonials-section">
+                            </div> <!-- end of swiper-wrapper -->
+                            
+                            <!-- Add Arrows -->
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                            <!-- end of add arrows -->
+
+                        </div> <!-- end of swiper-container -->
+                    </div> <!-- end of slider-container -->
+                    <!-- end of text slider -->
+
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of slider-2 -->
+    <!-- end of testimonials -->
+
+    <!-- Newsletter -->
+    <div class="form no-display" id="newsletter-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="text-container">
+                        <div class="above-heading" id="newsletter-header"></div>
+                        <h2 id="newsletter-description"></h2>
+
+                        <!-- Newsletter Form -->
+                        <form id="newsletterForm" data-toggle="validator" data-focus="false">
+                            <div class="form-group">
+                                <input type="hidden" name="subject">
+                                <input type="email" name="email" class="form-control-input" id="nemail" required>
+                                <label class="label-control" for="nemail">Email</label>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                            <div class="form-group">
+                                <input type="hidden" name="accessKey">
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="form-control-submit-button">SUBSCRIBE</button>
+                            </div>
+                            <div class="form-message">
+                                <div id="nmsgSubmit" class="h3 text-center hidden"></div>
+                            </div>
+                        </form>
+                        <!-- end of newsletter form -->
+
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="icon-container">
+                        <span class="fa-stack no-display" id="facebook-profile">
+                            <a target="_blank" href="#">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-facebook-f fa-stack-1x"></i>
+                            </a>
+                        </span>
+                        <span class="fa-stack no-display" id="twitter-profile">
+                            <a target="_blank" href="#">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-twitter fa-stack-1x"></i>
+                            </a>
+                        </span>
+                        <span class="fa-stack no-display" id="instagram-profile">
+                            <a target="_blank" href="#">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-instagram fa-stack-1x"></i>
+                            </a>
+                        </span>
+                        <span class="fa-stack no-display" id="linkedin-profile">
+                            <a target="_blank" href="#">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-linkedin-in fa-stack-1x"></i>
+                            </a>
+                        </span>
+                    </div> <!-- end of col -->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of form -->
+    <!-- end of newsletter -->
+
+
+    <!-- Footer -->
+    <svg class="footer-frame" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 1920 79"><defs><style>.cls-2{fill:#5f4def;}</style></defs><title>footer-frame</title><path class="cls-2" d="M0,72.427C143,12.138,255.5,4.577,328.644,7.943c147.721,6.8,183.881,60.242,320.83,53.737,143-6.793,167.826-68.128,293-60.9,109.095,6.3,115.68,54.364,225.251,57.319,113.58,3.064,138.8-47.711,251.189-41.8,104.012,5.474,109.713,50.4,197.369,46.572,89.549-3.91,124.375-52.563,227.622-50.155A338.646,338.646,0,0,1,1920,23.467V79.75H0V72.427Z" transform="translate(0 -0.188)"/></svg>
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="footer-col first">
+                        <h4>About <span class="company-name"></span></h4>
+                        <p class="p-small" id="about-company-details"></p>
                     </div>
-                    <ul class="footer-social-links list-reset">
-                        <li id="facebook-social-link">
-                            <a target="_blank" id="facebook-profile">
-                                <i class="fa fa-facebook fa-lg"></i>
-                            </a>
-                        </li>
-                        <li id="twitter-social-link">
-                            <a target="_blank"  id="twitter-profile">
-                                <i class="fa fa-twitter fa-lg"></i>
-                            </a>
-                        </li>
-                        <li id="instagram-social-link">
-                            <a target="_blank" id="instagram-profile">
-                                <i class="fa fa-instagram fa-lg"></i>
-                            </a>
-                        </li>
-                        <li id="google-social-link">
-                            <a target="_blank" id="google-profile">
-                                <i class="fa fa-google fa-lg"></i>
-                            </a>
-                        </li>
-                        <li id="linkedin-social-link">
-                            <a target="_blank" id="linkedin-profile">
-                                <i class="fa fa-linkedin fa-lg"></i>
-                            </a>
-                        </li>
-                        <li id="github-social-link">
-                            <a target="_blank" id="github-profile">
-                                <i class="fa fa-github fa-lg"></i>
-                            </a>
-                        </li>
-                    </ul>
-                    <div class="footer-copyright">&copy; 
-                        <script type="text/JavaScript">
+                </div> <!-- end of col -->
+                <div class="col-md-4">
+                   
+                </div> <!-- end of col -->
+                <div class="col-md-4">
+                    <div class="footer-col last">
+                        <h4>Contact</h4>
+                        <ul class="list-unstyled li-space-lg p-small">
+                            <li class="media">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div class="media-body" id="company-address"></div>
+                            </li>
+                            <li class="media">
+                                <i class="fas fa-envelope"></i>
+                                <div class="media-body"><a class="white" id="contact-email"></a></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of footer -->  
+    <!-- end of footer -->
+
+    <!-- Copyright -->
+    <div class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="p-small">Copyright © <script type="text/JavaScript">
                         document.write(new Date().getFullYear());
-                        </script>&nbsp<span id="company-name"></span>, all rights reserved
-                    </div>
-                </div>
-            </div>
-        </footer>
-    </div>
+                        </script> <span class="company-name"></span></a></p>
+                </div> <!-- end of col -->
+            </div> <!-- enf of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of copyright --> 
+    <!-- end of copyright -->
+    
+    	
+    <!-- Scripts -->
+    <script src="js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+    <script src="js/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
+    <script src="js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="js/jquery.easing.min.js"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
+    <script src="js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
+    <script src="js/validator.min.js"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
+    <script src="js/scripts.js"></script> <!-- Custom scripts -->
     <script src="/js/constants.js"></script>
-    <script src="dist/js/preview.js"></script>
-    <script src="dist/js/main.min.js"></script>
+    <script src="js/preview.js"></script>
 </body>
 </html>

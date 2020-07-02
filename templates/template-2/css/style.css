@@ -499,30 +499,13 @@ footer {
   transition: .5s ease;
 }
 
-#pricing-component-info, #customers-component-info{
+#pricing-component-info {
   display: none;
   font-size: 0.8em;
 }
 
 .pricing-component-text {
   font-size: 0.8em;
-}
-
-/* #newsletter-section {
-  display: none;
-} */
-
-#newsletter-accesskey-info {
-  font-size: 0.8em;
-}
-
-#verify-details-carousel {
-  font-size: 0.8em;
-  font-family: 'Source Sans Pro', sans-serif;
-}
-
-#video-details-verify, #newsletter-details-verify {
-  display: none;
 }
 
 .templates-home-button {
@@ -535,4 +518,17 @@ footer {
 .templates-home-button:hover {
   color: #4e73df;
   text-decoration: none;
+}
+
+#newsletter-accesskey-info {
+  font-size: 0.8em;
+}
+
+#verify-details-carousel {
+  font-size: 0.8em;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+#video-details-verify, #newsletter-details-verify {
+  display: none;
 }

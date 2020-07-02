@@ -1,6 +1,6 @@
-/* Template: Evolo - StartUp HTML Landing Page Template
+/* Template: Tivo - SaaS App HTML Landing Page Template
    Author: Inovatik
-   Created: June 2019
+   Created: Sep 2019
    Description: Custom JS file
 */
 
@@ -84,10 +84,10 @@
     });
 
 
-    /* Card Slider - Swiper */
-	var cardSlider = new Swiper('.card-slider', {
-		autoplay: {
-            delay: 4000,
+    /* Text Slider - Swiper */
+	var textSlider = new Swiper('.text-slider', {
+        autoplay: {
+            delay: 6000,
             disableOnInteraction: false
 		},
         loop: true,
@@ -96,7 +96,7 @@
 			prevEl: '.swiper-button-prev'
 		}
     });
-    
+
 
     /* Video Lightbox - Magnific Popup */
     $('.popup-youtube, .popup-vimeo').magnificPopup({
@@ -131,7 +131,7 @@
     });
 
 
-    /* Lightbox - Magnific Popup */
+    /* Details Lightbox - Magnific Popup */
 	$('.popup-with-move-anim').magnificPopup({
 		type: 'inline',
 		fixedContentPos: false, /* keep it false to avoid html tag shift with margin-right: 17px */
@@ -156,121 +156,172 @@
     });
 
 
-    /* Request Form */
-    $("#requestForm").validator().on("submit", function(event) {
+    /* Sign Up Form */
+    $("#signUpForm").validator().on("submit", function(event) {
     	if (event.isDefaultPrevented()) {
             // handle the invalid form...
-            rformError();
-            rsubmitMSG(false, "Please fill all fields!");
+            sformError();
+            ssubmitMSG(false, "Please fill all fields!");
         } else {
             // everything looks good!
             event.preventDefault();
-            rsubmitForm();
+            ssubmitForm();
         }
     });
 
-    function rsubmitForm() {
+    function ssubmitForm() {
         // initiate variables with form content
-		var name = $("#rname").val();
-		var email = $("#remail").val();
-		var phone = $("#rphone").val();
-        var select = $("#rselect").val();
-        var terms = $("#rterms").val();
+		var email = $("#semail").val();
+		var name = $("#sname").val();
+		var password = $("#spassword").val();
+        var terms = $("#sterms").val();
         
         $.ajax({
             type: "POST",
-            url: "php/requestform-process.php",
-            data: "name=" + name + "&email=" + email + "&phone=" + phone + "&select=" + select + "&terms=" + terms, 
+            url: "php/signupform-process.php",
+            data: "email=" + email + "&name=" + name + "&password=" + password + "&terms=" + terms, 
             success: function(text) {
                 if (text == "success") {
-                    rformSuccess();
+                    sformSuccess();
                 } else {
-                    rformError();
-                    rsubmitMSG(false, text);
+                    sformError();
+                    ssubmitMSG(false, text);
                 }
             }
         });
 	}
 
-    function rformSuccess() {
-        $("#requestForm")[0].reset();
-        rsubmitMSG(true, "Request Submitted!");
+    function sformSuccess() {
+        $("#signUpForm")[0].reset();
+        ssubmitMSG(true, "Sign Up Submitted!");
         $("input").removeClass('notEmpty'); // resets the field label after submission
     }
 
-    function rformError() {
-        $("#requestForm").removeClass().addClass('shake animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+    function sformError() {
+        $("#signUpForm").removeClass().addClass('shake animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
             $(this).removeClass();
         });
 	}
 
-    function rsubmitMSG(valid, msg) {
+    function ssubmitMSG(valid, msg) {
         if (valid) {
             var msgClasses = "h3 text-center tada animated";
         } else {
             var msgClasses = "h3 text-center";
         }
-        $("#rmsgSubmit").removeClass().addClass(msgClasses).text(msg);
+        $("#smsgSubmit").removeClass().addClass(msgClasses).text(msg);
     }
-    
 
-    /* Contact Form */
-    $("#contactForm").validator().on("submit", function(event) {
+
+    /* Log In Form */
+    $("#logInForm").validator().on("submit", function(event) {
     	if (event.isDefaultPrevented()) {
             // handle the invalid form...
-            cformError();
-            csubmitMSG(false, "Please fill all fields!");
+            lformError();
+            lsubmitMSG(false, "Please fill all fields!");
         } else {
             // everything looks good!
             event.preventDefault();
-            csubmitForm();
+            lsubmitForm();
         }
     });
 
-    function csubmitForm() {
+    function lsubmitForm() {
         // initiate variables with form content
-		var name = $("#cname").val();
-		var email = $("#cemail").val();
-        var message = $("#cmessage").val();
-        var terms = $("#cterms").val();
+		var email = $("#lemail").val();
+		var password = $("#lpassword").val();
+        
+        $.ajax({
+            type: "POST",
+            url: "php/loginform-process.php",
+            data: "email=" + email + "&password=" + password, 
+            success: function(text) {
+                if (text == "success") {
+                    lformSuccess();
+                } else {
+                    lformError();
+                    lsubmitMSG(false, text);
+                }
+            }
+        });
+	}
+
+    function lformSuccess() {
+        $("#logInForm")[0].reset();
+        lsubmitMSG(true, "Log In Submitted!");
+        $("input").removeClass('notEmpty'); // resets the field label after submission
+    }
+
+    function lformError() {
+        $("#logInForm").removeClass().addClass('shake animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+            $(this).removeClass();
+        });
+	}
+
+    function lsubmitMSG(valid, msg) {
+        if (valid) {
+            var msgClasses = "h3 text-center tada animated";
+        } else {
+            var msgClasses = "h3 text-center";
+        }
+        $("#lmsgSubmit").removeClass().addClass(msgClasses).text(msg);
+    }
+
+
+    /* Newsletter Form */
+    $("#newsletterForm").validator().on("submit", function(event) {
+    	if (event.isDefaultPrevented()) {
+            // handle the invalid form...
+            nformError();
+            nsubmitMSG(false, "Please fill all fields!");
+        } else {
+            // everything looks good!
+            event.preventDefault();
+            nsubmitForm();
+        }
+    });
+
+    function nsubmitForm() {
+        // initiate variables with form content
+		var email = $("#nemail").val();
+        var terms = $("#nterms").val();
         $.ajax({
             type: "POST",
             url: "https://api.staticforms.xyz/submit",
             dataType : 'json',
-            data : $("#contactForm").serialize(),
+            data : $("#newsletterForm").serialize(),
             success: function(text) {
                 if (text['success']) {
-                    cformSuccess();
+                    nformSuccess();
                 } else {
-                    cformError();
-                    csubmitMSG(false, text);
+                    nformError();
+                    nsubmitMSG(false, text);
                 }
             }
         });
 	}
 
-    function cformSuccess() {
-        $("#contactForm")[0].reset();
-        csubmitMSG(true, "Message Submitted!");
+    function nformSuccess() {
+        $("#newsletterForm")[0].reset();
+        nsubmitMSG(true, "Subscribed!");
         $("input").removeClass('notEmpty'); // resets the field label after submission
-        $("textarea").removeClass('notEmpty'); // resets the field label after submission
     }
 
-    function cformError() {
-        $("#contactForm").removeClass().addClass('shake animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+    function nformError() {
+        $("#newsletterForm").removeClass().addClass('shake animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
             $(this).removeClass();
         });
 	}
 
-    function csubmitMSG(valid, msg) {
+    function nsubmitMSG(valid, msg) {
         if (valid) {
             var msgClasses = "h3 text-center tada animated";
         } else {
             var msgClasses = "h3 text-center";
         }
-        $("#cmsgSubmit").removeClass().addClass(msgClasses).text(msg);
+        $("#nmsgSubmit").removeClass().addClass(msgClasses).text(msg);
     }
-
+    
 
     /* Privacy Form */
     $("#privacyForm").validator().on("submit", function(event) {
@@ -329,7 +380,8 @@
     }
     
 
-    /* Back To Top Button 
+    /* Back To Top Button */
+    // create the back to top button
     $('body').prepend('<a href="body" class="back-to-top page-scroll">Back to Top</a>');
     var amountScrolled = 700;
     $(window).scroll(function() {
@@ -339,11 +391,11 @@
             $('a.back-to-top').fadeOut('500');
         }
     });
-    */
+
 
 	/* Removes Long Focus On Buttons */
 	$(".button, a, button").mouseup(function() {
 		$(this).blur();
-    });
+	});
 
 })(jQuery);

@@ -8,7 +8,7 @@
         <link rel="apple-touch-icon" sizes="180x180" href="https://cdn.hashnode.com/res/hashnode/image/upload/v1535143357282/r1HT61C8Q.png" />
         <title>CLI for Product Hunt</title>
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-        <link rel="stylesheet" href="./css/style.css">
+        <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -21,7 +21,7 @@
             <div class="modal-dialog modal-xl" role="document">
                 <div class="modal-content" style="background-color: #F6F8FA;">
                     <div class="modal-body">
-                        <img src="images/template1_helper.png" style="width: 100%; height: 80%;"/>
+                        <img src="images/template2_helper.png" style="width: 100%; height: 80%;"/>
                     </div>
                 </div>
             </div>
@@ -32,15 +32,14 @@
                 <div class="left left-new" style="overflow: scroll;">
                     <div class="row">
                         <div style="position: absolute; left: 10%; top: 5%; color: #fff;">
-                            <strong>Template 1</strong>
-                            <div></div>
+                            <strong>Template 2</strong>
                         </div>
                         <div style="position: absolute; left: 70%; top: 5%; color: #fff;">
                             <a href="/templates/" class="templates-home-button">Templates</a>
                         </div>
                     </div>
                     <div class="row" id="helper-image-thumbnail">
-                        <img data-toggle="modal" data-target="#websiteBigImageModal" src="/images/templates/template1.png" style="left: 10%; width: 80%; height: 35%; top: 12%; padding: 5px; border: 1px solid #fff;"/>
+                        <img data-toggle="modal" data-target="#websiteBigImageModal" src="/images/templates/template2.png" style="left: 10%; width: 80%; height: 35%; top: 12%; padding: 5px; border: 1px solid #fff;"/>
                     </div>
                     <div class="row">
                         <div style="position: absolute; left: 10%; top: 52%; color: #fff;">
@@ -112,16 +111,6 @@
                                                 </div>
                                             </div>
 
-                                            <div class="form-group row">
-                                                <label for="product-tagline" class="col-sm-3 col-form-label">About Company Details</label>
-                                                <div class="col-md-8 col-sm-8 mb-3">  
-                                                <textarea class="form-control form-control-sm" id="about-company-details" maxlength="150"  placeholder="Company Details" rows="2" required></textarea>
-                                                <div class="invalid-feedback">
-                                                    Please provide company details.
-                                                </div>
-                                                </div>
-                                            </div>
-
                                             <div class="form-group row mb-0">
                                                 <label for="website-name" class="col-sm-3 col-form-label">Website Name</label>
                                                 <div class="col-md-8 col-sm-8 mb-3">  
@@ -138,13 +127,13 @@
                                             </div>
                                             
                                             <div class="form-group row mb-0">
-                                                <label for="cover-image-link" class="col-sm-3 col-form-label">Product Image URL</label>
+                                                <label for="cover-image-link" class="col-sm-3 col-form-label">Cover Image Link</label>
                                                 <div class="col-md-8 col-sm-8 mb-3">  
                                                     <div class="input-group mb-3 input-group-sm">
                                                         <div class="input-group-prepend">
                                                           <span class="input-group-text" id="basic-addon3">https://</span>
                                                         </div>
-                                                        <input type="text" class="form-control form-control-sm url-input-field" id="cover-image-link" required>
+                                                        <input type="text" class="form-control form-control-sm" id="cover-image-link" required>
                                                         <div class="invalid-feedback">
                                                             Please provide a cover image link.
                                                         </div>
@@ -152,40 +141,14 @@
                                                 </div>
                                             </div>
 
-                                            <div class="form-group row">
-                                                <label class="col-sm-3 col-form-label">Company Address</label>
-                                                <div class="col-md-8 col-sm-8 mb-3">  
-                                                    <input type="text" class="form-control form-control-sm" id="company-address" placeholder="Company address">
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group row">
-                                                <label class="col-sm-3 col-form-label">Contact Email</label>
-                                                <div class="col-md-8 col-sm-8 mb-3">  
-                                                    <input type="text" class="form-control form-control-sm" id="contact-email" placeholder="Contact Email">
-                                                </div>
-                                            </div>
-
                                             <div class="form-group row mb-0">
-                                                <label class="col-sm-3 col-form-label">Logo Image URL</label>
+                                                <label for="cover-image-link" class="col-sm-3 col-form-label">Facebook Profile</label>
                                                 <div class="col-md-8 col-sm-8 mb-3">  
                                                     <div class="input-group mb-3 input-group-sm">
                                                         <div class="input-group-prepend">
                                                           <span class="input-group-text" id="basic-addon3">https://</span>
                                                         </div>
-                                                        <input type="text" class="form-control form-control-sm url-input-field" id="logo-image-url">
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group row mb-0">
-                                                <label class="col-sm-3 col-form-label">Facebook Profile</label>
-                                                <div class="col-md-8 col-sm-8 mb-3">  
-                                                    <div class="input-group mb-3 input-group-sm">
-                                                        <div class="input-group-prepend">
-                                                          <span class="input-group-text" id="basic-addon3">https://</span>
-                                                        </div>
-                                                        <input type="text" class="form-control form-control-sm url-input-field" id="facebook-profile" placeholder="facebook.com/sunil.kumar.682">
+                                                        <input type="text" class="form-control form-control-sm" id="facebook-profile" placeholder="facebook.com/sunilkumar682">
                                                     </div>
                                                 </div>
                                             </div>
@@ -197,7 +160,7 @@
                                                         <div class="input-group-prepend">
                                                           <span class="input-group-text" id="basic-addon3">https://</span>
                                                         </div>
-                                                        <input type="text" class="form-control form-control-sm url-input-field" id="twitter-profile" placeholder="twitter.com/sunilc_">
+                                                        <input type="text" class="form-control form-control-sm" id="twitter-profile" placeholder="twitter.com/sunilc_">
                                                     </div>
                                                 </div>
                                             </div>
@@ -209,7 +172,19 @@
                                                         <div class="input-group-prepend">
                                                           <span class="input-group-text" id="basic-addon3">https://</span>
                                                         </div>
-                                                        <input type="text" class="form-control form-control-sm url-input-field" id="instagram-profile" placeholder="instagram.com/_sunilc">
+                                                        <input type="text" class="form-control form-control-sm" id="instagram-profile" placeholder="instagram.com/sunilc_">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row mb-0">
+                                                <label for="google-profile" class="col-sm-3 col-form-label">Google Profile</label>
+                                                <div class="col-md-8 col-sm-8 mb-3">  
+                                                    <div class="input-group mb-3 input-group-sm">
+                                                        <div class="input-group-prepend">
+                                                          <span class="input-group-text" id="basic-addon3">https://</span>
+                                                        </div>
+                                                        <input type="text" class="form-control form-control-sm" id="google-profile" placeholder="google.com/sunilc_">
                                                     </div>
                                                 </div>
                                             </div>
@@ -221,39 +196,23 @@
                                                         <div class="input-group-prepend">
                                                           <span class="input-group-text" id="basic-addon3">https://</span>
                                                         </div>
-                                                        <input type="text" class="form-control form-control-sm url-input-field" id="linkedin-profile" placeholder="linkedin.com/in/sunilkumarc">
+                                                        <input type="text" class="form-control form-control-sm" id="linkedin-profile" placeholder="linkedin.com/sunilc_">
                                                     </div>
                                                 </div>
                                             </div>
-                                            </div>
-                                        </div>
-                                        <div class="card mb-4">
-                                            <div class="card-header my-card-header">
-                                                <div style="float: left;">
-                                                    Video Details
-                                                </div>
-                                            </div>
-                                            <div class="">
-                                                <div>
-                                                    <div class="video-section pl-5 pt-3 pb-3 pr-3" style="border-bottom: 5px solid #e0e5ee; padding-bottom: 0px">
-                                                        <div class="form-group row mb-2">
-                                                            <label class="col-sm-3 col-form-label">Video Description</label> 
-                                                            <div class="col-md-8 col-sm-8 mb-3 pt-2" data-children-count="1">
-                                                                <textarea id="video-description" class="form-control form-control-sm" maxlength="500" rows="4" placeholder="Video details"></textarea>
-                                                            </div>
+
+                                            <div class="form-group row mb-0">
+                                                <label for="github-profile" class="col-sm-3 col-form-label">Github Profile</label>
+                                                <div class="col-md-8 col-sm-8 mb-3">  
+                                                    <div class="input-group mb-3 input-group-sm">
+                                                        <div class="input-group-prepend">
+                                                          <span class="input-group-text" id="basic-addon3">https://</span>
                                                         </div>
-                                                        <div class="form-group row mb-0">
-                                                            <label class="col-sm-3 col-form-label">Video Link</label> 
-                                                            <div class="col-md-8 col-sm-8 pt-2 pb-1">
-                                                                <div class="input-group mb-3 input-group-sm" data-children-count="1">
-                                                                    <div class="input-group-prepend"><span class="input-group-text" id="basic-addon3" data-children-count="0">https://</span></div>
-                                                                    <input id="product-video-url" type="text" class="form-control form-control-sm url-input-field"> 
-                                                                    <div class="invalid-feedback">Please provide a link.</div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                                        <input type="text" class="form-control form-control-sm" id="github-profile" placeholder="github.com/sunilc_">
                                                     </div>
                                                 </div>
+                                            </div>
+
                                             </div>
                                         </div>
                                         <div class="card mb-4">
@@ -267,7 +226,6 @@
                                             </div>
                                             <div class="">
                                                 <div id="feature-sections-container">
-                                                    
                                                 </div>
                                             </div>
                                         </div>
@@ -282,35 +240,6 @@
                                             </div>
                                             <div class="">
                                                 <div id="main-sections-container">
-                                                    
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card mb-4">
-                                            <div class="card-header my-card-header">
-                                                <div style="float: left;">
-                                                    User Testimonials
-                                                </div>
-                                                <div class="d-flex justify-content-end">
-                                                    <button type="button" class="btn btn-sm btn-outline-primary" id="add-testimonials-section">Add Testimonial</button>
-                                                </div>
-                                            </div>
-                                            <div class="">
-                                                <div id="testimonials-sections-container">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card mb-4">
-                                            <div class="card-header my-card-header">
-                                                <div style="float: left;">
-                                                    Newsletter
-                                                </div>
-                                                <div class="d-flex justify-content-end">
-                                                    <button type="button" class="btn btn-sm btn-outline-primary" id="add-newsletter-section">Add Newsletter Section</button>
-                                                </div>
-                                            </div>
-                                            <div class="">
-                                                <div id="newsletter-section-container">
                                                     
                                                 </div>
                                             </div>
@@ -333,30 +262,6 @@
                                                         <div class="alert alert-primary" role="alert" id="pricing-component-info">
                                                             Selecting this adds a pricing component with 3 pricing plans to your website with 
                                                             dummy data. You can customize the pricing section by choosing the <strong>Standard</strong> plan
-                                                            and getting access to your website code.
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card mb-4">
-                                            <div class="card-header my-card-header">
-                                                <div style="float: left;">
-                                                    Customers
-                                                </div>
-                                            </div>
-                                            <div class="p-4 pl-5">
-                                                <div class="row">
-                                                    <div class="col-md-12 pl-0">
-                                                        <input type="checkbox" id="add-customers-component">
-                                                        <span class="ml-2" id="pricing-component-text">Add customers component</span>
-                                                    </div>
-                                                </div>
-                                                <div class="row mt-3">
-                                                    <div class="col-md-12 pl-0">
-                                                        <div class="alert alert-primary" role="alert" id="customers-component-info">
-                                                            Selecting this adds a dummy list of companies to your website.
-                                                            You can customize the list by choosing the <strong>Standard</strong> plan
                                                             and getting access to your website code.
                                                         </div>
                                                     </div>
@@ -388,32 +293,16 @@
                                                     <td id="product-name-verify"></td>
                                                 </tr>
                                                 <tr>
-                                                    <th scope="row">Product Description</th>
-                                                    <td id="product-description-verify"></td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">About Company Details</th>
-                                                    <td id="about-company-details-verify"></td>
-                                                </tr>
-                                                <tr>
                                                     <th scope="row">Website Name</th>
                                                     <td id="website-name-verify"></td>
                                                 </tr>
                                                 <tr>
+                                                    <th scope="row">Product Description</th>
+                                                    <td id="product-description-verify"></td>
+                                                </tr>
+                                                <tr>
                                                     <th scope="row">Cover Image Link</th>
                                                     <td id="cover-image-link-verify"></td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">Company Address</th>
-                                                    <td id="company-address-verify"></td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">Contact Email</th>
-                                                    <td id="contact-email-verify"></td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">Logo Image URL</th>
-                                                    <td id="logo-image-url-verify"></td>
                                                 </tr>
                                                 <tr>
                                                     <th scope="row">Facebook Profile</th>
@@ -428,44 +317,29 @@
                                                     <td id="instagram-profile-verify"></td>
                                                 </tr>
                                                 <tr>
+                                                    <th scope="row">Google Profile</th>
+                                                    <td id="google-profile-verify"></td>
+                                                </tr>
+                                                <tr>
                                                     <th scope="row">LinkedIn Profile</th>
                                                     <td id="linkedin-profile-verify"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Github Profile</th>
+                                                    <td id="github-profile-verify"></td>
                                                 </tr>
                                                 <tr>
                                                     <th scope="row">Add Pricing Component</th>
                                                     <td id="pricing-component-verify"></td>
                                                 </tr>
-                                                <tr>
-                                                    <th scope="row">Add Pricing Component</th>
-                                                    <td id="customers-component-verify"></td>
-                                                </tr>
                                             </tbody>
                                         </table>    
-                                    </div>
-                                    <div class="card p-3 pl-5 mt-4" id="video-details-verify">
-                                        <table class="table table-sm table-bordered">
-                                            <thead>
-                                                <tr class="text-center">
-                                                    <th scope="col" colspan="3" class="header-text">Video Details</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <th style="width: 30%">Video URL</td>
-                                                    <td style="width: 70%" class="url"></td>
-                                                </tr>
-                                                <tr>
-                                                    <th style="width: 30%">Video Description</td>
-                                                    <td style="width: 70%" class="description"></td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
                                     </div>
                                     <div class="card p-3 pl-5 mt-4">
                                         <table class="table table-sm table-bordered">
                                             <thead>
                                                 <tr class="text-center">
-                                                    <th scope="col" colspan="3" class="header-text">Feature Section Details</th>
+                                                    <th scope="col" colspan="2" class="header-text">Feature Section Details</th>
                                                 </tr>
                                             </thead>
                                             <tbody id="feature-sections-verify">
@@ -485,45 +359,6 @@
                                             </tbody>
                                         </table>
                                     </div>
-                                    <div class="card p-3 pl-5 mt-4">
-                                        <table class="table table-sm table-bordered">
-                                            <thead>
-                                                <tr class="text-center">
-                                                    <th scope="col" colspan="3" class="header-text">User Testimonials</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody id="user-testimonials-verify">
-                                                
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <div class="card p-3 pl-5 mt-4" id="newsletter-details-verify">
-                                        <table class="table table-sm table-bordered">
-                                            <thead>
-                                                <tr class="text-center">
-                                                    <th scope="col" colspan="3" class="header-text">Newsletter</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <th style="width: 30%">Header</th>
-                                                    <td style="width: 70%" class="header"></td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Description</th>
-                                                    <td class="description"></td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Access Key</th>
-                                                    <td class="access-key"></td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Email Subject</th>
-                                                    <td class="email-subject"></td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
                                     <div>
                                         <button class="btn btn-sm btn-primary col-md-2 mt-3" id="go-back-to-main-page">Back</button>
                                         <button class="btn btn-sm btn-primary col-md-2 mt-3" id="live-preview">Live Preview</button>
@@ -538,6 +373,6 @@
         </div>
         <script src="https://js.stripe.com/v3/"></script>
         <script src="/js/constants.js" type="text/javascript"></script>
-        <script src="js/template1.js" type="text/javascript"></script>
+        <script src="js/template2.js" type="text/javascript"></script>
     </body>
 </html>
