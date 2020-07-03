@@ -2208,3 +2208,7 @@ a:hover.back-to-top {
 .pricing-card .card-body {
 	padding: 5px;
 }
+
+.bg-color {
+	background-color: #f7fcfd;
+}
