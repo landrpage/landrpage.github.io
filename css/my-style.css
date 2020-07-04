@@ -136,7 +136,7 @@ a {
 
 .container .container-wrap .right .content-wrap {
     padding: 50px;
-    margin-top: 2em;
+    /* margin-top: 1em; */
 }
 
 .container .container-wrap .right .content-wrap h1 {
