@@ -59,7 +59,7 @@ function loadPreviewDetails(website_details) {
     }
     $("#testimonials-section").html(testimonials_section_html);
 
-    if (website_details["newsletter_section"]) {
+    if (website_details["newsletter_section"]["access_key"]) {
         $("#newsletter-header").html(website_details["newsletter_section"]["header"]);
         $("#newsletter-description").html(website_details["newsletter_section"]["description"]);
         $("#newsletter-section").removeClass("no-display");
