@@ -1,9 +1,14 @@
 window.onpaint = loadData();
 
 function loadPreviewDetails(website_details) {
+    console.log(website_details);
     $("#product-name").html(website_details["product_name"]);
     $("#product-description").html(website_details["product_description"]);
     $("#product-image-url").attr("src", website_details["product_image_url"]);
+
+    if (website_details["add_customers_section"]) {
+        $("#add-customers-section").removeClass("no-display");
+    }
     
     if (website_details["logo_image_url"]) {
         $("#logo-image-url").attr("src", website_details["logo_image_url"]);
@@ -29,8 +34,11 @@ function loadPreviewDetails(website_details) {
             feature_sections_html += "<div class=\"card\"><div class=\"card-image\"><img class=\"img-fluid\" src=\"https://demos.onepagelove.com/html/tivo/images/description-3.png\" alt=\"alternative\"></div><div class=\"card-body\"><h4 class=\"card-title\">" + website_details["feature_sections"][i]["header"] + "</h4><p> " + website_details["feature_sections"][i]["description"] + "</p></div></div>";
         }
     }
-    $("#feature-sections").html(feature_sections_html);
-
+    if (feature_sections_html != "") {
+        $("#feature-sections").html(feature_sections_html);
+        $("#features").removeClass("no-display");
+    }
+    
     var main_sections_html = "";
     for (var i = 0; i < website_details["description_sections"].length; ++i) {
         if (i % 2) {
@@ -57,7 +65,11 @@ function loadPreviewDetails(website_details) {
             testimonials_section_html += "<div class=\"swiper-slide\"><div class=\"image-wrapper\"><img class=\"img-fluid\" src=\"https://demos.onepagelove.com/html/tivo/images/person_testimonial.jpg\" alt=\"alternative\"></div><div class=\"text-wrapper\"><div class=\"testimonial-text\">" + website_details["testimonial_sections"][i]["testimonial"] + "</div><div class=\"testimonial-author\">" + website_details["testimonial_sections"][i]["given_by"] + "</div></div></div>";
         }
     }
-    $("#testimonials-section").html(testimonials_section_html);
+    if (testimonials_section_html != "") {
+        $("#testimonials-section").html(testimonials_section_html);
+        $("#add-customers-section-container").removeClass("no-display");
+    }
+    
 
     if (website_details["newsletter_section"]["access_key"]) {
         $("#newsletter-header").html(website_details["newsletter_section"]["header"]);
@@ -87,8 +99,16 @@ function loadPreviewDetails(website_details) {
 
     $(".company-name").html(website_details["company_name"]);
     $("#about-company-details").html(website_details["about_company_details"]);
-    $("#company-address").html(website_details["company_address"]);
-    $("#contact-email").html(website_details["contact_email"]);
+
+    if (website_details["company_address"]) {
+        $("#company-address").html(website_details["company_address"]);
+        $("#company-address-icon").removeClass("no-display");
+    }
+    
+    if (website_details["contact_email"]) {
+        $("#contact-email").html(website_details["contact_email"]);
+        $("#contact-email-icon").removeClass("no-display");
+    }
 }
 
 function getUrlParameter(sParam) {
