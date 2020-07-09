@@ -2212,3 +2212,20 @@ a:hover.back-to-top {
 .bg-color {
 	background-color: #f7fcfd;
 }
+
+#made-by-container {
+	position:fixed;
+	bottom: 0;
+	width: 12.5%;
+	background-color: #00bfd8;
+	border-radius: 5px;
+	padding: 5px;
+	padding-left: 10px;
+}
+
+#made-by-container a {
+	font-weight: bold;
+	color: #fff;
+	text-decoration: none;
+	font: "Raleway", sans-serif;
+}
